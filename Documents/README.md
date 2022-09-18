@@ -27,12 +27,12 @@
 ```
 - Supprimer une branche en local
 ```
-    git branch -D <initiales>/<nom de la branche>
+  git branch -D <initiales>/<nom de la branche>
 ```
 - Étapes pour push du code
   1. Sauvegarder tout fichiers modifiés
   2. `` git status `` pour vérifier tous les fichiers modifiés
-  3. `` git add <fichier à push> `` ou `` git add . `` pour ajouter les fichiers (à éviter)
+  3. `` git add <fichier à commit> `` ou `` git add . `` pour ajouter les fichiers (à éviter)
   4. `` git commit -m "<messgae>" (les fichiers sont maintenant permanents sur votre ordinateur)
   5. `` git push `` (le code est maintant en ligne)
   6. Créer une pull request
