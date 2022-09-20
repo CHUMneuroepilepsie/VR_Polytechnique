@@ -5,6 +5,9 @@ Développement d'un jeu VR pour des tests de mémoire sur les personnes épilept
 # Description
 Ce jeu est développé par des étudiants de Polytechnique Montréal en collaboration avec le laboratoire du Dr. Nguyen au CHUM.
 
+# Spécifications
+Unity version 2021.3.10f1
+
 # Contact
 
 
