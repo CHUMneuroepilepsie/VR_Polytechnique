@@ -9,12 +9,12 @@ Ce jeu est développé par des étudiants de Polytechnique Montréal en collabor
 Unity version 2021.3.10f1
 
 # Contact
-Beaudoin-Dumas, Gabriel
-Bouchard, Lucas 
-Bréhéret, Arnaud
-Diouri, Yassine
-Doré-Walsh, Emmanuel
-Gharsallah, Fatima
-Grondin-Reiher, Lauriane
-Skaf, Andréa
+* Beaudoin-Dumas, Gabriel
+* Bouchard, Lucas 
+* Bréhéret, Arnaud
+* Diouri, Yassine
+* Doré-Walsh, Emmanuel
+* Gharsallah, Fatima
+* Grondin-Reiher, Lauriane
+* Skaf, Andréa
 
