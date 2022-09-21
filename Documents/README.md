@@ -31,6 +31,11 @@
 ```
   git branch -D <initiales>/<nom de la branche>
 ```
+- Update sa branche avec les ajouts dans ``main``
+```
+  git checkout <initiales>/<nom de la branche>
+  git pull origin master
+```
 - Étapes pour push du code
   1. Sauvegarder tous les fichiers modifiés
   2. `` git status `` pour vérifier tous les fichiers modifiés
