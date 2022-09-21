@@ -15,8 +15,6 @@ Unity version 2021.3.10f1
 * Diouri, Yassine
 * Doré-Walsh, Emmanuel (emmanuel.dore.walsh@hotmail.com)
 * Gharsallah, Fatima
-* Grondin-Reiher, Lauriane
 * Skaf, Andréa (andrea.skaf@polymtl.ca)
 * Grondin-Reiher, Lauriane (lauriane.grondin-reiher@polymtl.ca)
-* Skaf, Andréa
 
