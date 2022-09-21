@@ -11,7 +11,7 @@ Unity version 2021.3.10f1
 # Contact
 * Beaudoin-Dumas, Gabriel
 * Bouchard, Lucas 
-* Bréhéret, Arnaud
+* Bréhéret, Arnaud (arnaud.breheret@polymtl.ca)
 * Diouri, Yassine
 * Doré-Walsh, Emmanuel
 * Gharsallah, Fatima
