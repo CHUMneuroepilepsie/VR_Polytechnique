@@ -9,7 +9,7 @@ Ce jeu est développé par des étudiants de Polytechnique Montréal en collabor
 Unity version 2021.3.10f1
 
 # Contact
-* Beaudoin-Dumas, Gabriel
+* Beaudoin-Dumas, Gabriel (gabriel.beaudoin-dumas@polymtl.ca)
 * Bouchard, Lucas 
 * Bréhéret, Arnaud (arnaud.breheret@polymtl.ca)
 * Diouri, Yassine
