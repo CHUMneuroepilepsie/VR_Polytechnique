@@ -16,5 +16,5 @@ Unity version 2021.3.10f1
 * Doré-Walsh, Emmanuel
 * Gharsallah, Fatima
 * Grondin-Reiher, Lauriane
-* Skaf, Andréa
+* Skaf, Andréa (andrea.skaf@polymtl.ca)
 
