@@ -14,7 +14,7 @@ Unity version 2021.3.10f1
 * Bréhéret, Arnaud (arnaud.breheret@polymtl.ca)
 * Diouri, Yassine
 * Doré-Walsh, Emmanuel (emmanuel.dore.walsh@hotmail.com)
-* Gharsallah, Fatima
+* Gharsallah, Fatima (fatima.gharsallah@polymtl.ca)
 * Skaf, Andréa (andrea.skaf@polymtl.ca)
 * Grondin-Reiher, Lauriane (lauriane.grondin-reiher@polymtl.ca)
 
