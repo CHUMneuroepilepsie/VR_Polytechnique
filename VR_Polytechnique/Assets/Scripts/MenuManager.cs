@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         volume = PlayerPrefs.GetFloat("Volume");
-        slider = GetComponent<Slider>();
+        slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = volume;
     }
     public void SetNumberText(float volume)
