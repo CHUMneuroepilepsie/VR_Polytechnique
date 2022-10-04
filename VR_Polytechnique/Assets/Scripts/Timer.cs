@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     bool stopwatchActive = false;
     float currentTime;
-    public Text currentTimeText;
+    public TextMeshProUGUI currentTimeText;
 
     // Start is called before the first frame update
     void Start()
