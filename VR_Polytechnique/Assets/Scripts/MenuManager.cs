@@ -11,10 +11,13 @@ public class MenuManager : MonoBehaviour
     private Slider slider;
     private float volume;
     public int gameStartScene;
+    public TextMeshProUGUI currentTimeText;
 
     private void Start()
     {
         volume = PlayerPrefs.GetFloat("Volume");
+        currentTimeText.text = PlayerPrefs.GetString("Time");
+        PlayerPrefs.SetString("LastTime", currentTimeText.text);
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = volume;
     }

@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 5009971190820834820, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_text
-      value: Start
+      value: Restart test
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483145, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -228,7 +228,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483150, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483150, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -310,10 +310,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 607019979}
     m_Modifications:
+    - target: {fileID: 1412218275320894964, guid: 0ff25aec3a824784c96b5975829346fd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412218275320894964, guid: 0ff25aec3a824784c96b5975829346fd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1412218275320894965, guid: 0ff25aec3a824784c96b5975829346fd,
         type: 3}
       propertyPath: m_text
-      value: Tutorial
+      value: Restart Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1412218275410427750, guid: 0ff25aec3a824784c96b5975829346fd,
         type: 3}
@@ -358,7 +368,7 @@ PrefabInstance:
     - target: {fileID: 1412218275410427751, guid: 0ff25aec3a824784c96b5975829346fd,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1412218275410427751, guid: 0ff25aec3a824784c96b5975829346fd,
         type: 3}
@@ -702,7 +712,7 @@ PrefabInstance:
     - target: {fileID: 3479272103035468163, guid: c010d618f229105408a53c5a6843239d,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3479272103035468163, guid: c010d618f229105408a53c5a6843239d,
         type: 3}
@@ -1010,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 2812006061157161808, guid: cac7887a1cf713948a4174f937c76e27,
         type: 3}
       propertyPath: gameStartScene
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4731178397403737827, guid: cac7887a1cf713948a4174f937c76e27,
         type: 3}
@@ -1592,7 +1602,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000019073, y: 105.8}
-  m_SizeDelta: {x: 201.7168, y: 102.4933}
+  m_SizeDelta: {x: 400, y: 102.4933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830258574
 MonoBehaviour:
@@ -1614,9 +1624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MENU
-
-'
+  m_text: GAME OVER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1651,7 +1659,7 @@ MonoBehaviour:
   m_fontSizeMax: 0
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
