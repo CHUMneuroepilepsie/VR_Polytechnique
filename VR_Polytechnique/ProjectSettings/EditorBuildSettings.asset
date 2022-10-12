@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu_Anglais.unity
     guid: 7e560013f11c56b4a914e13a1846fc3e
   - enabled: 1
-    path: Assets/Scenes/Base.unity
+    path: Assets/Scenes/Mode_Evaluation.unity
     guid: 7c5e49fc7c435404c83bc39fc27c4054
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c7cf340f5bbc7fc438c63251e1264475,
