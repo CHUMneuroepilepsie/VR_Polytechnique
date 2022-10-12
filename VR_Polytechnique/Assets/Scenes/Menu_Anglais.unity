@@ -315,6 +315,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 1412218275410427747, guid: 0ff25aec3a824784c96b5975829346fd,
+        type: 3}
+      propertyPath: gameStartScene
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1412218275410427750, guid: 0ff25aec3a824784c96b5975829346fd,
         type: 3}
       propertyPath: m_Name
