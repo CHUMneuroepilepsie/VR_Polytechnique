@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     {
         volume = PlayerPrefs.GetFloat("Volume");
         currentTimeText.text = PlayerPrefs.GetString("Time");
-        PlayerPrefs.SetString("LastTime", currentTimeText.text);
+        PlayerPrefs.SetInt("TimerPaused", 0);
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = volume;
     }
@@ -28,6 +28,8 @@ public class MenuManager : MonoBehaviour
     }
     public void StartGame()
     {
+        PlayerPrefs.SetInt("TimerPaused", 0);
+        PlayerPrefs.SetInt("IsFirst", 1);
         SceneManager.LoadScene(gameStartScene);
     }
     public void QuitGame()

@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberText: {fileID: 0}
-  gameStartScene: 0
+  gameStartScene: 2
   currentTimeText: {fileID: 0}
 --- !u!4 &1464032483
 Transform:
