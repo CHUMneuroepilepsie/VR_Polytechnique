@@ -16,9 +16,9 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         volume = PlayerPrefs.GetFloat("Volume");
-        currentTimeText.text = PlayerPrefs.GetString("Time");
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = volume;
+        currentTimeText.text = PlayerPrefs.GetString("Time");
     }
     public void SetNumberText(float volume)
     {
