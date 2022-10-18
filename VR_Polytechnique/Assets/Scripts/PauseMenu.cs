@@ -49,6 +49,6 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Menu_Fin_Français");
+        SceneManager.LoadScene("Menu_Fin_" + PlayerPrefs.GetString("Language"));
     }
 }

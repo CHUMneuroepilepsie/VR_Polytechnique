@@ -39,7 +39,6 @@ public class Timer : MonoBehaviour
         if (PlayerPrefs.GetInt("TimerPaused") == 1)
         {
             PlayerPrefs.SetString("Time", current_time);
-            currentTimeText.text = current_time;
             stopwatchActive = false;
         }
 
