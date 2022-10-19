@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19559151, g: 0.23698464, b: 0.31058577, a: 1}
+  m_IndirectSpecularColor: {r: 0.19557694, g: 0.23695657, b: 0.310541, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1987,6 +1987,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1211085177183242702, guid: cd92b93b5a0f74345a0076af00d93140,
+        type: 3}
+      propertyPath: m_text
+      value: 'Terminer la partie
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1211085177519812455, guid: cd92b93b5a0f74345a0076af00d93140,
         type: 3}
       propertyPath: m_Pivot.x

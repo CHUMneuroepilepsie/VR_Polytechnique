@@ -1182,6 +1182,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1211085177183242702, guid: cd92b93b5a0f74345a0076af00d93140,
+        type: 3}
+      propertyPath: m_text
+      value: Terminer la partie
+      objectReference: {fileID: 0}
     - target: {fileID: 1211085177519812455, guid: cd92b93b5a0f74345a0076af00d93140,
         type: 3}
       propertyPath: m_Pivot.x
