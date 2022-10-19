@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         pauseMenuUI.SetActive(false);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -33,12 +34,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        PlayerPrefs.SetInt("TimerPaused", 0);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void PauseGame()
     {
+        PlayerPrefs.SetInt("TimerPaused", 1);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -46,6 +49,6 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Menu_Français");
+        SceneManager.LoadScene("Menu_Fin_" + PlayerPrefs.GetString("Language"));
     }
 }
