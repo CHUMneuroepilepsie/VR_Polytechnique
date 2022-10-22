@@ -17,7 +17,7 @@ public class TimerText : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-
+        // DO NOT DELETE
     }
             
     private void Start()

@@ -18,33 +18,32 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         // Save data when leaving scene (DO NOT DELETE)
-        Debug.Log("Saving " + Language);
         data.Language = this.Language;
     }
 
     public void ReturnMenu()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene("Menu_" + Language);
     }
     public void ChangeLanguage()
     {
         if (Language == "Anglais")
         {
-            Debug.Log(Language);
             Language = "Français";
-            Debug.Log(Language);
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadScene("Menu_Fin_Français");
         }
         else
         {
-            Debug.Log(Language);
             Language = "Anglais";
-            Debug.Log(Language);
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadScene("Menu_Fin_Anglais");
         }        
     }
     public void QuitGame()
     {
+        DataPersistenceManager.instance.SaveGame();
         Application.Quit();
     }
 }

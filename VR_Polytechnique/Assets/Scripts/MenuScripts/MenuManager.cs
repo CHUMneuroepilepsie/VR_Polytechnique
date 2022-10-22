@@ -47,11 +47,13 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         if (Language == "Français")
         {
             Language = "Anglais";
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Anglais");
         }
         else
         {
             Language = "Français";
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Français");
         }
     }
@@ -66,6 +68,8 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         PlayerPrefs.SetInt("TimerPaused", 0);
         PlayerPrefs.SetInt("IsFirst", 1);
         Time.timeScale = 1f;
+
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Apprentissage");
     }
 
@@ -75,12 +79,15 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         PlayerPrefs.SetInt("TimerPaused", 0);
         PlayerPrefs.SetInt("IsFirst", 1);
         Time.timeScale = 1f;
+
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Evaluation");
     }
 
     public void QuitGame()
     {
         DisableMenuButtons();
+        DataPersistenceManager.instance.SaveGame();
         Application.Quit();
     }
 

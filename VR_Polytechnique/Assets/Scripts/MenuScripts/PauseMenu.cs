@@ -63,6 +63,7 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
 
     public void QuitGame()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene("Menu_Fin_" + Language);
     }
 }
