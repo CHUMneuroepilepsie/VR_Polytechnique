@@ -37,8 +37,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         {
             Language = "Français";
         }
-
-        Debug.Log(Language);
     }
 
     public void ChangeMenu()
@@ -63,10 +61,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         DisableMenuButtons();
         // initialize game data
         DataPersistenceManager.instance.NewGame();
-
         // Prepare and laod scene
-        PlayerPrefs.SetInt("TimerPaused", 0);
-        PlayerPrefs.SetInt("IsFirst", 1);
         Time.timeScale = 1f;
 
         DataPersistenceManager.instance.SaveGame();
@@ -76,8 +71,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void LoadEvaluation()
     {
         DisableMenuButtons();
-        PlayerPrefs.SetInt("TimerPaused", 0);
-        PlayerPrefs.SetInt("IsFirst", 1);
         Time.timeScale = 1f;
 
         DataPersistenceManager.instance.SaveGame();

@@ -32,19 +32,6 @@ public class Timer : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("TimerPaused") == 0)
-        {
-            stopwatchActive = true;
-        }
-
-        if (PlayerPrefs.GetInt("TimerPaused") == 1)
-        {
-            stopwatchActive = false;
-        }
-
-        if (stopwatchActive==true)
-        {
-            currentTime = currentTime + Time.deltaTime;
-        }
+        currentTime = currentTime + Time.deltaTime;
     }
 }

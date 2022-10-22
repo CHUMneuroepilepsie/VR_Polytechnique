@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb71df01f74cc841816ee367f398273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: data.profile
+  fileName: settings

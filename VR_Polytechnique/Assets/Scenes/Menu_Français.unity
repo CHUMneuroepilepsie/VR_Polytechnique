@@ -169,7 +169,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &219052637
 MonoBehaviour:
@@ -454,7 +454,7 @@ RectTransform:
   - {fileID: 1414034727}
   - {fileID: 607019979}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 2349750485410180685, guid: fce4e986bdf922c47b0d63da4cade1d8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2349750485410180685, guid: fce4e986bdf922c47b0d63da4cade1d8,
         type: 3}
@@ -1020,7 +1020,6 @@ MonoBehaviour:
   StartGameButton: {fileID: 2003983472}
   LanguageGameButton: {fileID: 1930653905}
   QuitGameButton: {fileID: 1045533081}
-  numberText: {fileID: 0}
 --- !u!4 &1464032483
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,7 +1065,7 @@ Transform:
   m_Children:
   - {fileID: 1464032483}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1745133931
 PrefabInstance:

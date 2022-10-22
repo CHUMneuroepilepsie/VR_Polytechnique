@@ -15,13 +15,12 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        this.NbPaused = data.NbPaused; 
         this.Language = data.Language;
     }
 
     public void SaveData(GameData data)
     {
-        data.NbPaused = this.NbPaused;
+        // DO NOT DELETE
     }
 
     private void Start()
