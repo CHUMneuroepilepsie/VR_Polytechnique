@@ -11,21 +11,23 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     private int NbPaused = 0;
+    private string Language;
+
+    public void LoadData(GameData data)
+    {
+        this.NbPaused = data.NbPaused; 
+        this.Language = data.Language;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.NbPaused = this.NbPaused;
+    }
 
     private void Start()
     {
         GameIsPaused = false;
         pauseMenuUI.SetActive(false);
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.NbPaused = data.NbPaused; 
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.NbPaused = this.NbPaused;
     }
 
     void Update()
@@ -61,6 +63,6 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Menu_Fin_" + PlayerPrefs.GetString("Language"));
+        SceneManager.LoadScene("Menu_Fin_" + Language);
     }
 }

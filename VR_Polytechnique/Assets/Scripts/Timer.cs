@@ -7,25 +7,26 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Globalization;
 
-public class Timer : MonoBehaviour
+public class Timer : MonoBehaviour, IDataPersistence
 {
     bool stopwatchActive = false;
     float currentTime;
-    private String current_time;
     public TextMeshProUGUI currentTimeText;
 
     // Start is called before the first frame update
     void Start()
     {
-        current_time = PlayerPrefs.GetString("Time");
-        if (PlayerPrefs.GetInt("IsFirst") == 1) {
-            current_time = "00:00:000";
-        }
-        String[] separator = { ":", ":" };
-        String[] strlist = current_time.Split(separator, 3, StringSplitOptions.RemoveEmptyEntries);
-        currentTime = (float)((Convert.ToDouble(strlist[0]))*60 + (Convert.ToDouble(strlist[1])) + (Convert.ToDouble(strlist[2]))/1000);
         stopwatchActive = true;
-        PlayerPrefs.SetInt("TimerPaused", 0);
+    }
+
+    public void LoadData(GameData data)
+    {
+        // For loading data when entering scene (DO NOT DELETE)
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.currentTime = this.currentTime;
     }
 
     // Update is called once per frame
@@ -38,7 +39,6 @@ public class Timer : MonoBehaviour
 
         if (PlayerPrefs.GetInt("TimerPaused") == 1)
         {
-            PlayerPrefs.SetString("Time", current_time);
             stopwatchActive = false;
         }
 
@@ -46,8 +46,5 @@ public class Timer : MonoBehaviour
         {
             currentTime = currentTime + Time.deltaTime;
         }
-
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        current_time = time.ToString(@"mm\:ss\:fff");
     }
 }
