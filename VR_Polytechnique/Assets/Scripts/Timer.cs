@@ -9,15 +9,8 @@ using System.Globalization;
 
 public class Timer : MonoBehaviour, IDataPersistence
 {
-    bool stopwatchActive = false;
     float currentTime;
     public TextMeshProUGUI currentTimeText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        stopwatchActive = true;
-    }
 
     public void LoadData(GameData data)
     {
