@@ -4,12 +4,24 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour, IDataPersistence
 {
     // Start is called before the first frame update
     // Update is called once per frame
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    private int NbPaused = 0;
+    private string Language;
+
+    public void LoadData(GameData data)
+    {
+        this.Language = data.Language;
+    }
+
+    public void SaveData(GameData data)
+    {
+        // DO NOT DELETE
+    }
 
     private void Start()
     {
@@ -41,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     }
     void PauseGame()
     {
+        NbPaused++;
         PlayerPrefs.SetInt("TimerPaused", 1);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -49,6 +62,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Menu_Fin_" + PlayerPrefs.GetString("Language"));
+        DataPersistenceManager.instance.SaveGame();
+        SceneManager.LoadScene("Menu_Fin_" + Language);
     }
 }
