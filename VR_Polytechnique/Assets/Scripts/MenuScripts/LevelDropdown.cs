@@ -8,10 +8,12 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
 {
     public TextMeshProUGUI output;
     private int Level = 1;
+    private string Language = "";
 
     public void LoadData(GameData data)
     {
         // Load data when entering scene (DO NOT DELETE)
+        this.Language = data.Language;
     }
 
     public void SaveData(GameData data)
@@ -24,17 +26,38 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
     {
         if (val == 0)
         {
-            output.text = "Level 1 : 12 checkpoints";
+            if (Language == "Français")
+            {
+                output.text = "Niveau 1 : 12 points de contrôle";
+            }
+            else if (Language == "Anglais")
+            {
+                output.text = "Level 1 : 12 checkpoints";
+            }
             Level = val+1;
         }
         if (val == 1)
         {
-            output.text = "Level 2 : 15 checkpoints";
+            if (Language == "Français")
+            {
+                output.text = "Niveau 2 : 15 points de contrôle";
+            }
+            else if (Language == "Anglais")
+            {
+                output.text = "Level 2 : 15 checkpoints";
+            }
             Level = val+1;
         }
         if (val == 2)
         {
-            output.text = "Level 3 : 18 checkpoints";
+            if (Language == "Français")
+            {
+                output.text = "Niveau 3 : 18 points de contrôle";
+            }
+            else if (Language == "Anglais")
+            {
+                output.text = "Level 3 : 18 checkpoints";
+            }
             Level = val+1;
         }
     }
