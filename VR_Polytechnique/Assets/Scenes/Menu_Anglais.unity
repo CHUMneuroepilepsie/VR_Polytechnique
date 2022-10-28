@@ -359,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -370,7 +370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 325277006}
+      objectReference: {fileID: 1464032484}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -384,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: EnterSettings
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -394,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -1539,51 +1539,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
---- !u!1 &509009440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 509009441}
-  - component: {fileID: 509009442}
-  m_Layer: 0
-  m_Name: Dropdowns
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &509009441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509009440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1352291836}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &509009442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509009440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da35b29905b9d7479ca38ebf53773ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  output: {fileID: 1278760314}
 --- !u!1 &515802239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1551,7 @@ GameObject:
   - component: {fileID: 515802243}
   - component: {fileID: 515802242}
   - component: {fileID: 515802241}
+  - component: {fileID: 515802244}
   m_Layer: 5
   m_Name: LevelDropdown
   m_TagString: Untagged
@@ -1686,7 +1642,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 509009442}
+      - m_Target: {fileID: 515802244}
         m_TargetAssemblyTypeName: LevelDropdown, Assembly-CSharp
         m_MethodName: HandleInputData
         m_Mode: 0
@@ -1737,6 +1693,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515802239}
   m_CullTransparentMesh: 1
+--- !u!114 &515802244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515802239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da35b29905b9d7479ca38ebf53773ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: {fileID: 1278760314}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1849,7 @@ GameObject:
   - component: {fileID: 528953971}
   - component: {fileID: 528953970}
   m_Layer: 5
-  m_Name: Button
+  m_Name: XButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3296,7 +3265,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1464032483}
-  - {fileID: 509009441}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3661,7 +3629,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -3672,7 +3640,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 509009442}
+      objectReference: {fileID: 1464032484}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -3686,7 +3654,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SavePreferences
+      value: LoadEvaluation
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
@@ -3696,7 +3664,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelDropdown, Assembly-CSharp
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}

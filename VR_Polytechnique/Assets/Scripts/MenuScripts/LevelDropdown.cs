@@ -9,6 +9,7 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
     public TextMeshProUGUI output;
     private int Level = 1;
     private string Language = "";
+    private TMPro.TMP_Dropdown LvlDropdown;
 
     public void LoadData(GameData data)
     {
@@ -18,7 +19,8 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        data.Level = this.Level;
+        LvlDropdown = GameObject.Find("LevelDropdown").GetComponent<TMPro.TMP_Dropdown>();
+        data.Level = LvlDropdown.value + 1;
     }
 
     // Start is called before the first frame update
@@ -34,7 +36,6 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
             {
                 output.text = "Level 1 : 12 checkpoints";
             }
-            Level = val+1;
         }
         if (val == 1)
         {
@@ -46,7 +47,6 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
             {
                 output.text = "Level 2 : 15 checkpoints";
             }
-            Level = val+1;
         }
         if (val == 2)
         {
@@ -58,7 +58,6 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
             {
                 output.text = "Level 3 : 18 checkpoints";
             }
-            Level = val+1;
         }
     }
 

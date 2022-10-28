@@ -95,6 +95,15 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         QuitGameButton.interactable = false;
     }
 
+    public void EnterSettings()
+    {
+        SettingsMenuUI.SetActive(true);
+        TMPro.TMP_Dropdown LvlDropdown = GameObject.Find("LevelDropdown").GetComponent<TMPro.TMP_Dropdown>();
+        int initValue = LvlDropdown.value;
+        LvlDropdown.value = initValue + 1;
+        LvlDropdown.value = initValue;
+    }
+
     public void ExitSettings()
     {
         SettingsMenuUI.SetActive(false);
