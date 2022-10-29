@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 272366597}
   - component: {fileID: 272366599}
   - component: {fileID: 272366598}
+  - component: {fileID: 272366600}
   m_Layer: 0
   m_Name: BG8
   m_TagString: Untagged
@@ -437,6 +438,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &272366600
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272366596}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1001 &380740869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -538,6 +563,7 @@ GameObject:
   - component: {fileID: 612682500}
   - component: {fileID: 612682502}
   - component: {fileID: 612682501}
+  - component: {fileID: 612682503}
   m_Layer: 0
   m_Name: Terrain_AS
   m_TagString: Untagged
@@ -605,6 +631,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &612682503
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612682499}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &643011424
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +759,7 @@ GameObject:
   - component: {fileID: 800782009}
   - component: {fileID: 800782011}
   - component: {fileID: 800782010}
+  - component: {fileID: 800782012}
   m_Layer: 0
   m_Name: BG1
   m_TagString: Untagged
@@ -776,6 +827,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &800782012
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800782008}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &811908916
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +862,7 @@ GameObject:
   - component: {fileID: 811908917}
   - component: {fileID: 811908919}
   - component: {fileID: 811908918}
+  - component: {fileID: 811908920}
   m_Layer: 0
   m_Name: BG5
   m_TagString: Untagged
@@ -854,6 +930,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &811908920
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811908916}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &851263539
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +965,7 @@ GameObject:
   - component: {fileID: 851263540}
   - component: {fileID: 851263542}
   - component: {fileID: 851263541}
+  - component: {fileID: 851263543}
   m_Layer: 0
   m_Name: BG9
   m_TagString: Untagged
@@ -932,6 +1033,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &851263543
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851263539}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &855717290
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +1068,7 @@ GameObject:
   - component: {fileID: 855717291}
   - component: {fileID: 855717293}
   - component: {fileID: 855717292}
+  - component: {fileID: 855717294}
   m_Layer: 0
   m_Name: Terrain_FG
   m_TagString: Untagged
@@ -1010,6 +1136,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &855717294
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855717290}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &938051557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1171,7 @@ GameObject:
   - component: {fileID: 938051558}
   - component: {fileID: 938051560}
   - component: {fileID: 938051559}
+  - component: {fileID: 938051561}
   m_Layer: 0
   m_Name: Terrain_EDW
   m_TagString: Untagged
@@ -1088,6 +1239,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &938051561
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938051557}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &961769214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1274,7 @@ GameObject:
   - component: {fileID: 961769215}
   - component: {fileID: 961769217}
   - component: {fileID: 961769216}
+  - component: {fileID: 961769218}
   m_Layer: 0
   m_Name: BG12
   m_TagString: Untagged
@@ -1166,6 +1342,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &961769218
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961769214}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &976384981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1377,7 @@ GameObject:
   - component: {fileID: 976384982}
   - component: {fileID: 976384984}
   - component: {fileID: 976384983}
+  - component: {fileID: 976384985}
   m_Layer: 0
   m_Name: BG2
   m_TagString: Untagged
@@ -1244,6 +1445,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &976384985
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976384981}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1024693121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1480,7 @@ GameObject:
   - component: {fileID: 1024693122}
   - component: {fileID: 1024693124}
   - component: {fileID: 1024693123}
+  - component: {fileID: 1024693125}
   m_Layer: 0
   m_Name: Terrain_LG
   m_TagString: Untagged
@@ -1322,6 +1548,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &1024693125
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024693121}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1028752162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1666,7 @@ GameObject:
   - component: {fileID: 1089513004}
   - component: {fileID: 1089513006}
   - component: {fileID: 1089513005}
+  - component: {fileID: 1089513007}
   m_Layer: 0
   m_Name: BG11
   m_TagString: Untagged
@@ -1483,6 +1734,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &1089513007
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089513003}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1192033574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2367,7 @@ GameObject:
   - component: {fileID: 1424646570}
   - component: {fileID: 1424646572}
   - component: {fileID: 1424646571}
+  - component: {fileID: 1424646573}
   m_Layer: 0
   m_Name: BG3
   m_TagString: Untagged
@@ -2159,6 +2435,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &1424646573
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424646569}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1430245846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,6 +2470,7 @@ GameObject:
   - component: {fileID: 1430245847}
   - component: {fileID: 1430245849}
   - component: {fileID: 1430245848}
+  - component: {fileID: 1430245850}
   m_Layer: 0
   m_Name: BG7
   m_TagString: Untagged
@@ -2237,6 +2538,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &1430245850
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430245846}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1459087808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,13 +3415,13 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.0062
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.0027
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.0011999999
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
@@ -3111,6 +3436,7 @@ GameObject:
   - component: {fileID: 1744881376}
   - component: {fileID: 1744881378}
   - component: {fileID: 1744881377}
+  - component: {fileID: 1744881379}
   m_Layer: 0
   m_Name: BG6
   m_TagString: Untagged
@@ -3178,6 +3504,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &1744881379
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744881375}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &1987391094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,14 +3555,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987391094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.31210583, z: -0, w: 0.9500474}
+  m_LocalPosition: {x: 0, y: 148, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 643011425}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 36.372, z: 0}
 --- !u!114 &1987391096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,6 +3842,7 @@ GameObject:
   - component: {fileID: 2146483937}
   - component: {fileID: 2146483939}
   - component: {fileID: 2146483938}
+  - component: {fileID: 2146483940}
   m_Layer: 0
   m_Name: BG4
   m_TagString: Untagged
@@ -3559,6 +3910,30 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!205 &2146483940
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146483936}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0062
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0027
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0011999999
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1001 &1211085176189171355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3707,6 +4082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623802611063546159, guid: cd92b93b5a0f74345a0076af00d93140,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.599976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd92b93b5a0f74345a0076af00d93140, type: 3}
