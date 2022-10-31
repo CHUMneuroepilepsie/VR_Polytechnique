@@ -351,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218433908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 65, y: 15, z: 20}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2296,7 +2296,7 @@ PrefabInstance:
     - target: {fileID: 6244160547984231947, guid: b8e12fa0dbc22d54daaf271755b4d42e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6244160547984231947, guid: b8e12fa0dbc22d54daaf271755b4d42e,
         type: 3}
@@ -2605,7 +2605,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486181813
 GameObject:
@@ -3541,6 +3541,7 @@ GameObject:
   - component: {fileID: 1987391098}
   - component: {fileID: 1987391097}
   - component: {fileID: 1987391096}
+  - component: {fileID: 1987391100}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3556,7 +3557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987391094}
   m_LocalRotation: {x: -0, y: 0.31210583, z: -0, w: 0.9500474}
-  m_LocalPosition: {x: 0, y: 148, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3736,6 +3737,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1987391100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987391094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!4 &2026747853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5496771651116601247, guid: 27adab04ecfb4e64dac0b0212e3957f7,
@@ -3961,7 +3980,7 @@ PrefabInstance:
     - target: {fileID: 1211085177519812455, guid: cd92b93b5a0f74345a0076af00d93140,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1211085177519812455, guid: cd92b93b5a0f74345a0076af00d93140,
         type: 3}
