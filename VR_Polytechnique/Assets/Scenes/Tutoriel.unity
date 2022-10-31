@@ -895,58 +895,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
---- !u!1 &1732491416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1483894653992972633, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1920582213}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1813373778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1483894653492755190, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1920582213}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1813373784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813373778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 2
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 0
---- !u!1001 &1920582213
+--- !u!1001 &1529606894
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -413211958810880099, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -413211958810880099, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -413211958810880099, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1483894653992972631, guid: 7ad93711498ae6d4a9701f399b7e87a4,
         type: 3}
       propertyPath: m_RootOrder
@@ -1007,21 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1483894653992972634, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2413092045909436099, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1732491416}
-    - target: {fileID: 2413092045909436099, guid: 7ad93711498ae6d4a9701f399b7e87a4,
-        type: 3}
-      propertyPath: TeleportTo
-      value: 
-      objectReference: {fileID: 750195444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad93711498ae6d4a9701f399b7e87a4, type: 3}
 --- !u!1 &1925728079
