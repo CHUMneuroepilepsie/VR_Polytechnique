@@ -1484,10 +1484,8 @@ GameObject:
   - component: {fileID: 1483894653992972630}
   - component: {fileID: 1483894653992972629}
   - component: {fileID: 1483894653992972628}
-  - component: {fileID: 1483894653992972635}
   - component: {fileID: 1483894653992972634}
   - component: {fileID: 2413092045909436099}
-  - component: {fileID: -413211958810880099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1557,20 +1555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 0}
---- !u!114 &1483894653992972635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483894653992972633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
-  m_DelayTime: 0
 --- !u!143 &1483894653992972634
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1603,17 +1587,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   TeleportTo: {fileID: 0}
---- !u!136 &-413211958810880099
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483894653992972633}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
