@@ -11,21 +11,22 @@ public class Teleporter : MonoBehaviour
 
     void Start()
     {
-        Controller = gameObject.GetComponent<CharacterController>();
+        Controller = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
     }
     private void OnTriggerEnter( Collider collision)
     {
 
-        if (collision.gameObject.CompareTag("Teleporter")) 
+        if (collision.gameObject.CompareTag("Player")) 
         {
             // Teleportation of a moving object require us to stop his movement, teleporting him, then allowing him to move again.
             // Done by turning off/on his CharacterController component
 
             Controller.enabled = false;
+
             Player.transform.position = TeleportTo.transform.position;
+
             Controller.enabled = true;
 
-            // Debug.Log("Teleportation");
         }
     }
 }
