@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     [SerializeField] private Button QuitGameButton;
 
     private string Language;
+    public GameObject SettingsMenuUI;
 
     public void LoadData(GameData data)
     {
@@ -29,6 +30,8 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
+        SettingsMenuUI.SetActive(false);
+
         if (SceneManager.GetActiveScene().name == "Menu_Anglais")
         {
             Language = "Anglais";
@@ -90,5 +93,16 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         StartGameButton.interactable = false;
         LanguageGameButton.interactable = false;
         QuitGameButton.interactable = false;
+    }
+
+    public void EnterSettings()
+    {
+        DataPersistenceManager.instance.SaveGame();
+        SettingsMenuUI.SetActive(true);
+    }
+
+    public void ExitSettings()
+    {
+        SettingsMenuUI.SetActive(false);
     }
 }
