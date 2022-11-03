@@ -6,7 +6,6 @@ using TMPro;
 
 public class LevelDropdown : MonoBehaviour, IDataPersistence
 {
-    public TextMeshProUGUI output;
     private string Language = "";
     private TMPro.TMP_Dropdown LvlDropdown;
     private int lvl = 0;
