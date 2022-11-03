@@ -25,39 +25,6 @@ public class LevelDropdown : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     public void HandleInputData(int val)
     {
-        if (val == 0)
-        {
-            if (Language == "Français")
-            {
-                output.text = "Niveau 1 : 12 points de contrôle";
-            }
-            else if (Language == "Anglais")
-            {
-                output.text = "Level 1 : 12 checkpoints";
-            }
-        }
-        if (val == 1)
-        {
-            if (Language == "Français")
-            {
-                output.text = "Niveau 2 : 15 points de contrôle";
-            }
-            else if (Language == "Anglais")
-            {
-                output.text = "Level 2 : 15 checkpoints";
-            }
-        }
-        if (val == 2)
-        {
-            if (Language == "Français")
-            {
-                output.text = "Niveau 3 : 18 points de contrôle";
-            }
-            else if (Language == "Anglais")
-            {
-                output.text = "Level 3 : 18 checkpoints";
-            }
-        }
         LvlDropdown = GameObject.Find("LevelDropdown").GetComponent<TMPro.TMP_Dropdown>();
         lvl = LvlDropdown.value;
     }
