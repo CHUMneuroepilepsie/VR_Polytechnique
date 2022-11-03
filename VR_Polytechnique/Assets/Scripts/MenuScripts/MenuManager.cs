@@ -97,11 +97,8 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     public void EnterSettings()
     {
+        DataPersistenceManager.instance.SaveGame();
         SettingsMenuUI.SetActive(true);
-        TMPro.TMP_Dropdown LvlDropdown = GameObject.Find("LevelDropdown").GetComponent<TMPro.TMP_Dropdown>();
-        int initValue = LvlDropdown.value;
-        LvlDropdown.value = initValue + 1;
-        LvlDropdown.value = initValue;
     }
 
     public void ExitSettings()
