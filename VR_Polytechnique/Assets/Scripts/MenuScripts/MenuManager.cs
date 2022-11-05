@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     private string Language;
     public GameObject SettingsMenuUI;
-
+    private string profileId;
     public void LoadData(GameData data)
     {
         // Load data when entering scene (DO NOT DELETE)
@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.Language = this.Language;
+        data.profileId = profileId;
     }
 
     private void Start()
@@ -45,16 +46,15 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void ChangeMenu()
     {
         DisableMenuButtons();
+        DataPersistenceManager.instance.SaveGame();
         if (Language == "Français")
         {
             Language = "Anglais";
-            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Anglais");
         }
         else
         {
             Language = "Français";
-            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Français");
         }
     }
@@ -74,6 +74,9 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void LoadEvaluation()
     {
         DisableMenuButtons();
+        TMPro.TMP_Dropdown D = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
+        profileId = D.options[D.value].text;
+        Debug.Log(profileId);
         Time.timeScale = 1f;
 
         DataPersistenceManager.instance.SaveGame();
