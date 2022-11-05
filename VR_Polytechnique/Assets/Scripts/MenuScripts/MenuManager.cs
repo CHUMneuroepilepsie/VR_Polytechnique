@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 {
     [Header("Menu Buttons")]
     [SerializeField] private Button TutorialButton;
-    [SerializeField] private Button StartGameButton;
+    [SerializeField] private Button SettingsButton;
     [SerializeField] private Button LanguageGameButton;
     [SerializeField] private Button QuitGameButton;
 
@@ -32,7 +32,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     private void Start()
     {
         SettingsMenuUI.SetActive(false);
-
         if (SceneManager.GetActiveScene().name == "Menu_Anglais")
         {
             Language = "Anglais";
@@ -42,6 +41,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
             Language = "Français";
         }
     }
+
 
     public void ChangeMenu()
     {
@@ -73,12 +73,20 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     public void LoadEvaluation()
     {
-        DisableMenuButtons();
         TMPro.TMP_Dropdown D = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
+        // Make sure they selected a profile Id
+        if (D.value == 0)
+        {
+            TextMeshProUGUI DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
+            DText.color = Color.red;
+            return;
+        }
+
+        // If Id is selected
+        DisableMenuButtons();
         profileId = D.options[D.value].text;
         Debug.Log(profileId);
         Time.timeScale = 1f;
-
         DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Evaluation");
     }
@@ -93,7 +101,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     private void DisableMenuButtons()
     {
         TutorialButton.interactable = false;
-        StartGameButton.interactable = false;
+        SettingsButton.interactable = false;
         LanguageGameButton.interactable = false;
         QuitGameButton.interactable = false;
     }

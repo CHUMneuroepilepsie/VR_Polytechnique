@@ -452,7 +452,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1414034727}
-  - {fileID: 607019979}
   - {fileID: 1766244748}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -675,7 +674,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607019978}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -685,7 +684,7 @@ RectTransform:
   - {fileID: 2003983471}
   - {fileID: 301867759}
   - {fileID: 1745133932}
-  m_Father: {fileID: 324170085}
+  m_Father: {fileID: 1414034727}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -754,6 +753,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &800812586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6503470084175714784, guid: 329c498908ada514a888d5278982867a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766244747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f84b75c8e6d474186a887a449e91a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1045533079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -942,6 +953,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1830258573}
+  - {fileID: 607019979}
   m_Father: {fileID: 324170085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1018,7 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TutorialButton: {fileID: 301867760}
-  StartGameButton: {fileID: 2003983472}
+  SettingsButton: {fileID: 2003983472}
   LanguageGameButton: {fileID: 1930653905}
   QuitGameButton: {fileID: 1045533081}
   SettingsMenuUI: {fileID: 1863118410}
@@ -1274,7 +1286,7 @@ PrefabInstance:
     - target: {fileID: 6503470083985440230, guid: 329c498908ada514a888d5278982867a,
         type: 3}
       propertyPath: m_text
-      value: Ajouter un profile
+      value: Ajouter un profil
       objectReference: {fileID: 0}
     - target: {fileID: 6503470083985440231, guid: 329c498908ada514a888d5278982867a,
         type: 3}
@@ -1306,6 +1318,41 @@ PrefabInstance:
       propertyPath: warningText
       value: 
       objectReference: {fileID: 2055381921}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 800812586}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDropdownValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UserDropdown, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503470084175714799, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6503470084204074243, guid: 329c498908ada514a888d5278982867a,
         type: 3}
       propertyPath: m_text
@@ -1389,7 +1436,7 @@ PrefabInstance:
     - target: {fileID: 6503470085255337270, guid: 329c498908ada514a888d5278982867a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6503470085255337270, guid: 329c498908ada514a888d5278982867a,
         type: 3}
@@ -1809,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 5009971191081483145, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}
       propertyPath: m_Name
-      value: StartButton
+      value: SettingsButton
       objectReference: {fileID: 0}
     - target: {fileID: 5009971191081483148, guid: f3bfe33266ef2d14587fd7a3cea97b1b,
         type: 3}

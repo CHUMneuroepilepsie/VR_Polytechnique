@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UserDropdown : MonoBehaviour, IDataPersistence
 {
     public TextMeshProUGUI new_id;
+    private TextMeshProUGUI DText;
     public GameObject warningText;
     private TMPro.TMP_Dropdown UsrDropdown;
     private string Language;
@@ -28,6 +30,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         try
         {
             UsrDropdown = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
+            DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
             LoadDropdownoptions();
         }
         catch
@@ -62,5 +65,10 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         DataPersistenceManager.instance.SaveGame();
         LoadDropdownoptions();
         UsrDropdown.value = AvailableIds.Count;
+    }
+
+    public void OnDropdownValueChanged()
+    {
+        DText.color = Color.white;
     }
 }
