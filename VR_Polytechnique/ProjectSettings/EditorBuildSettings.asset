@@ -15,8 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu_Anglais.unity
     guid: 7e560013f11c56b4a914e13a1846fc3e
   - enabled: 1
-    path: Assets/Scenes/Base.unity
+    path: Assets/Scenes/Mode_Evaluation.unity
     guid: 7c5e49fc7c435404c83bc39fc27c4054
+  - enabled: 1
+    path: Assets/Scenes/Mode_Apprentissage.unity
+    guid: 30469731f4dc93e4c86db6d6b2f0e76e
+  - enabled: 1
+    path: Assets/Scenes/Menu_Fin_Anglais.unity
+    guid: 5d4448f607452044f8ab4309212717db
+  - enabled: 1
+    path: "Assets/Scenes/Menu_Fin_Fran\xE7ais.unity"
+    guid: 08ca142209ed8d74fb33dd44424b1d2c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c7cf340f5bbc7fc438c63251e1264475,
       type: 2}

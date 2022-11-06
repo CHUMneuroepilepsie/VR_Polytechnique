@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2487384247426300737}
   - component: {fileID: 2487384247426300743}
-  - component: {fileID: 2487384247426300742}
+  - component: {fileID: 6801937263680403854}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -359,8 +359,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2487384247426300742}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 6801937263680403854}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
         m_MethodName: SetNumberText
         m_Mode: 0
         m_Arguments:
@@ -371,7 +371,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2487384247426300742
+--- !u!114 &6801937263680403854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,11 +380,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2487384247426300738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43df9abb0fe3ef24aacd4d578e44f27f, type: 3}
+  m_Script: {fileID: 11500000, guid: a6a8a78508ceaff4bae9ca794389a163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberText: {fileID: 2487384247816204977}
-  gameStartScene: 0
 --- !u!1 &2487384247541981535
 GameObject:
   m_ObjectHideFlags: 0
