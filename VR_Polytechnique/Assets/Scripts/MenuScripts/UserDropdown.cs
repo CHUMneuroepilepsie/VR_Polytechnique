@@ -59,6 +59,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         else if (AvailableIds.Contains(id))
         {
             warningText.SetActive(true);
+            UsrDropdown.value = AvailableIds.FindIndex(p => p == id) + 1;
             return;
         }
         AvailableIds.Add(new_id.text);
