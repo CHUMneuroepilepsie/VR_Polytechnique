@@ -1594,7 +1594,6 @@ MonoBehaviour:
   SettingsButton: {fileID: 523494290}
   LanguageGameButton: {fileID: 1030915448}
   QuitGameButton: {fileID: 1503751565}
-  StartGameButton: {fileID: 6503470085479678075}
   SettingsMenuUI: {fileID: 325277006}
 --- !u!114 &1503751565 stripped
 MonoBehaviour:
@@ -1762,6 +1761,11 @@ PrefabInstance:
       propertyPath: m_text
       value: This Id already exists
       objectReference: {fileID: 0}
+    - target: {fileID: 2342191290687163183, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -4.045121
+      objectReference: {fileID: 0}
     - target: {fileID: 6503470084175714784, guid: 329c498908ada514a888d5278982867a,
         type: 3}
       propertyPath: warningText
@@ -1882,6 +1886,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 6503470085255337271, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397789476597598365, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 329c498908ada514a888d5278982867a, type: 3}
 --- !u!1 &6503470085479678074 stripped
@@ -1890,15 +1904,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6503470085479678073}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6503470085479678075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2289528269713292295, guid: 329c498908ada514a888d5278982867a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6503470085479678073}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

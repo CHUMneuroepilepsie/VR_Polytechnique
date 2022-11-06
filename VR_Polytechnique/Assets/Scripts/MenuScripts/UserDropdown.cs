@@ -31,7 +31,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         {
             UsrDropdown = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
             DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
-            LoadDropdownoptions();
+            LoadDropdownOptions();
         }
         catch
         {
@@ -39,7 +39,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         }
     }
 
-    private void LoadDropdownoptions()
+    private void LoadDropdownOptions()
     {
         DataPersistenceManager.instance.LoadGame();
         UsrDropdown.ClearOptions();
@@ -52,7 +52,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
     {
         warningText.SetActive(false);
         string id = new_id.text;
-        if (id == "")
+        if (id.Length == 1)
         {
             return;
         }
@@ -63,7 +63,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         }
         AvailableIds.Add(new_id.text);
         DataPersistenceManager.instance.SaveGame();
-        LoadDropdownoptions();
+        LoadDropdownOptions();
         UsrDropdown.value = AvailableIds.Count;
     }
 

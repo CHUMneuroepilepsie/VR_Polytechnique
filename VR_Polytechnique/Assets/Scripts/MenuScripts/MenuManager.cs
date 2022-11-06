@@ -63,8 +63,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     {
         DisableMenuButtons();
         // initialize game data
-        DataPersistenceManager.instance.NewGame();
-        // Prepare and laod scene
         Time.timeScale = 1f;
 
         DataPersistenceManager.instance.SaveGame();
@@ -85,7 +83,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         // If Id is selected
         DisableMenuButtons();
         profileId = D.options[D.value].text;
-        Debug.Log(profileId);
         Time.timeScale = 1f;
         DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Evaluation");
