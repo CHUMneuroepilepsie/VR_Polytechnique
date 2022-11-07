@@ -1796,6 +1796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProfilePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1789323123095044378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789323123095044381, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
       propertyPath: m_Pivot.x

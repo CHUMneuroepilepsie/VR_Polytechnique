@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Menu_Fin_Fran\xE7ais.unity"
     guid: 08ca142209ed8d74fb33dd44424b1d2c
+  - enabled: 1
+    path: Assets/Scenes/Splash_Screen.unity
+    guid: 7bce48c5477ae1e4b90f8912205f0909
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c7cf340f5bbc7fc438c63251e1264475,
       type: 2}

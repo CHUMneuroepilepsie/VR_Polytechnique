@@ -94,7 +94,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         profileId = D.options[D.value].text;
         Time.timeScale = 1f;
         DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("Mode_Evaluation");
+        SceneManager.LoadSceneAsync("Splash_Screen");
     }
 
     public void QuitGame()
