@@ -2306,6 +2306,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 189.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2023629651}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveProfile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ProfilePanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1789323122983130636, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
       propertyPath: m_IsActive
@@ -2484,3 +2519,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2023629649}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023629651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1789323123095044382, guid: f506bf53f40e9ab45b76bcb83dfac752,
+    type: 3}
+  m_PrefabInstance: {fileID: 2023629649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413677405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c210848a283a04da88aa4a2f8c4946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

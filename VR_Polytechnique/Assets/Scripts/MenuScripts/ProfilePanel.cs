@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using UnityEngine.Rendering;
+using System.IO;
+using UnityEngine.Profiling;
 
 public class ProfilePanel : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private Button[] buttons;
     [SerializeField] private Button forwardArrow;
     [SerializeField] private Button backArrow;
+    private Button currentClickedButton;
     List<string> AvailableIds = new List<string>();
     private const int NBOPTIONS = 4;
     private int pageNb;
@@ -21,7 +22,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
        AvailableIds = data.AvailableIds;
-        Language = data.Language;
+       Language = data.Language;
     }
 
     public void SaveData(GameData data)
@@ -63,7 +64,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         SetAllButtonsInteractable();
 
         clickedButton.interactable = false;
-
+        currentClickedButton = clickedButton;
         //TODO - Show information on the right side
     }
 
@@ -129,13 +130,23 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     //TODO - Remove a profile 
     public void RemoveProfile()
     {
-        //TODO - Remove from directory
-
-        //TODO - Remove from settings file
-
+        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        string fullPath = Path.Combine(Application.persistentDataPath, profileId);
+        try
+        {
+            Directory.Delete(fullPath, true);
+            AvailableIds.Remove(profileId);
+        }
+        catch
+        {
+            Debug.Log("This Id does not have a directory");
+        }
+        
+        DataPersistenceManager.instance.SaveGame();
         DataPersistenceManager.instance.LoadGame();
         LoadArrowsStatus();
         ShowIds();
+        RemoveProfileMenuUI.SetActive(false);
     }
 
     public void OpenAddProileMenu()
