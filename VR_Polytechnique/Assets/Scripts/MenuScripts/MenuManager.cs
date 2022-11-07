@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     private string Language;
     public GameObject SettingsMenuUI;
+    public GameObject ProfileMenuUI;
+    public GameObject AddProfileMenuUI;
+    public GameObject RemoveProfileMenuUI;
     private string profileId;
     public void LoadData(GameData data)
     {
@@ -32,6 +35,10 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     private void Start()
     {
         SettingsMenuUI.SetActive(false);
+        ProfileMenuUI.SetActive(false);
+        AddProfileMenuUI.SetActive(false);
+        RemoveProfileMenuUI.SetActive(false);
+
         if (SceneManager.GetActiveScene().name == "Menu_Anglais")
         {
             Language = "Anglais";
@@ -40,6 +47,8 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         {
             Language = "Français";
         }
+
+        DataPersistenceManager.instance.SaveGame();
     }
 
 
@@ -112,5 +121,15 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void ExitSettings()
     {
         SettingsMenuUI.SetActive(false);
+    }
+
+    public void OpenProileMenu()
+    {
+        ProfileMenuUI.SetActive(true);
+    }
+
+    public void ExitProfileMenu()
+    {
+        ProfileMenuUI.SetActive(false);
     }
 }

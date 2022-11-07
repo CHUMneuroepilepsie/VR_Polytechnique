@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class UserDropdown : MonoBehaviour, IDataPersistence
 {
@@ -10,6 +11,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
     private TextMeshProUGUI DText;
     public GameObject warningText;
     private TMPro.TMP_Dropdown UsrDropdown;
+    public GameObject AddProfileMenuUI;
     private string Language;
     List<string> AvailableIds = new List<string>();
     
@@ -21,12 +23,13 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        data.AvailableIds = this.AvailableIds;
+        data.AvailableIds = this.AvailableIds.OrderBy(q => q).ToList();
     }
 
     // Start is called before the first frame update
     void OnEnable()
     {
+        // Security in case SettingsPanel was enabled on launch (which should not be the case in the builded game
         try
         {
             UsrDropdown = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
@@ -39,7 +42,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
         }
     }
 
-    private void LoadDropdownOptions()
+    public void LoadDropdownOptions()
     {
         DataPersistenceManager.instance.LoadGame();
         UsrDropdown.ClearOptions();
@@ -50,20 +53,7 @@ public class UserDropdown : MonoBehaviour, IDataPersistence
 
     public void AddId()
     {
-        warningText.SetActive(false);
-        string id = new_id.text;
-        if (id.Length == 1)
-        {
-            return;
-        }
-        else if (AvailableIds.Contains(id))
-        {
-            warningText.SetActive(true);
-            UsrDropdown.value = AvailableIds.FindIndex(p => p == id) + 1;
-            return;
-        }
-        AvailableIds.Add(new_id.text);
-        DataPersistenceManager.instance.SaveGame();
+        AddProfileMenuUI.SetActive(true);
         LoadDropdownOptions();
         UsrDropdown.value = AvailableIds.Count;
     }
