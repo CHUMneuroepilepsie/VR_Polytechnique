@@ -8,7 +8,33 @@ public class Checkpoint : MonoBehaviour, IDataPersistence
    
     [SerializeField] private string id;
     private bool checkpoint = false;
-    public GameObject Player;
+    public GameObject message;
+    public bool showmessage;
+
+    void Start()
+    {
+        message.SetActive(false);
+        showmessage = false;
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player") && checkpoint == false)
+        {
+            checkpoint = true;
+        }
+        else if (collision.gameObject.CompareTag("Player") && showmessage == true)
+        {
+            message.SetActive(true);
+            showmessage = false;
+            
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        message.SetActive(false);
+    }
 
     public void LoadData(GameData data)
     {
@@ -23,13 +49,6 @@ public class Checkpoint : MonoBehaviour, IDataPersistence
         }
         data.checkpointPassed.Add(id, checkpoint);
     }
-    private void OnTriggerEnter(Collider collision)
-    {
-
-        if (collision.gameObject.CompareTag("Player") && checkpoint == false)
-        {
-            checkpoint = true;
-        }
-    }
+   
 }
 
