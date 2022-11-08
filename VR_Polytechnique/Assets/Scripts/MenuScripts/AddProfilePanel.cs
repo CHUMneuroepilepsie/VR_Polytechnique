@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class AddProfilePanel : MonoBehaviour, IDataPersistence
 {
+    public ProfilePanel pPanel;
     List<string> AvailableIds = new List<string>();
     public TextMeshProUGUI new_id;
     public TextMeshProUGUI dateOfBirth;
@@ -98,7 +99,6 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         AvailableIds.Add(id);
         SaveProfile();
         DataPersistenceManager.instance.SaveGame();
-
         if (Language == "Anglais")
         {
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
@@ -109,6 +109,9 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
             warningText.GetComponent<TextMeshProUGUI>().text = "Profil ajouté!";
         }
+        warningText.SetActive(true);
+        DataPersistenceManager.instance.LoadGame();
+        pPanel.UpdatePanel();
     }
 
     public void SaveProfile()
