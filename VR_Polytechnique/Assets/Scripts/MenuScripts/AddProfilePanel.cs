@@ -47,7 +47,9 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
     {
         DataPersistenceManager.instance.LoadGame();
         string id = new_id.text;
+        id = id.Remove(id.Length - 1);
         string date = dateOfBirth.text;
+        date = date.Remove(date.Length - 1); 
         TextMeshProUGUI idText = GameObject.Find("IdText (TMP)").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI dateText = GameObject.Find("DateOfBirthInputText").GetComponent<TextMeshProUGUI>();
 
@@ -55,12 +57,12 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         dateText.color = Color.white;
         warningText.SetActive(false);
 
-        if (id.Length == 1)
+        if (id.Length == 0)
         {
             idText.color = Color.red;
             return;
         }
-        if (date.Length == 1)
+        if (date.Length == 0)
         {
             dateText.color = Color.red;
             return;
@@ -80,7 +82,12 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.SetActive(true);
             return;
         }
-        if (date.Split('-').Count() != 3)
+
+        List<string> dateSplits = new List<string>();
+        dateSplits.AddRange(date.Split('-'));
+        if (dateSplits.Count() != 3 || dateSplits[0].Length != 4 
+            || dateSplits[1].Length != 2 || dateSplits[2].Length != 2
+            || !dateSplits.TrueForAll(isNumber))
         {
             if (Language == "Anglais")
             {
@@ -124,5 +131,10 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         pData.dateOfBirth = dateOfBirth.text;
 
         dataHandler.SaveEvaluation(pData);
+    }
+
+    private static bool isNumber(string s)
+    {
+        return int.TryParse(s, out _);
     }
 }
