@@ -10,7 +10,6 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    private int NbPaused = 0;
     private string Language;
 
     public void LoadData(GameData data)
@@ -46,15 +45,12 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
 
     public void ResumeGame()
     {
-        PlayerPrefs.SetInt("TimerPaused", 0);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void PauseGame()
     {
-        NbPaused++;
-        PlayerPrefs.SetInt("TimerPaused", 1);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
