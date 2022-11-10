@@ -1791,6 +1791,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1464032484}
+    - target: {fileID: 1789323122039496128, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_text
+      value: 'Are you sure you want to delete this profile?
+
+
+
+        You will not
+        be able to recover its data.'
+      objectReference: {fileID: 0}
     - target: {fileID: 1789323123095044378, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
       propertyPath: m_Name
