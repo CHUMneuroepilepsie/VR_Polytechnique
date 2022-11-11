@@ -75,7 +75,6 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         clickedButton.interactable = false;
         currentClickedButton = clickedButton;
 
-        //TODO - Show information on the right side
         ShowInformations();
     }
 
@@ -106,7 +105,6 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
             }
             i++;
         }
-       // ShowInformations();
     }
 
     private void LoadArrowsStatus()
