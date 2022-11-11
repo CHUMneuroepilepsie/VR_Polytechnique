@@ -11,12 +11,16 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 {
     [Header("Menu Buttons")]
     [SerializeField] private Button TutorialButton;
-    [SerializeField] private Button StartGameButton;
+    [SerializeField] private Button SettingsButton;
     [SerializeField] private Button LanguageGameButton;
     [SerializeField] private Button QuitGameButton;
 
     private string Language;
-
+    public GameObject SettingsMenuUI;
+    public GameObject ProfileMenuUI;
+    public GameObject AddProfileMenuUI;
+    public GameObject RemoveProfileMenuUI;
+    private string profileId;
     public void LoadData(GameData data)
     {
         // Load data when entering scene (DO NOT DELETE)
@@ -25,10 +29,16 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.Language = this.Language;
+        data.profileId = profileId;
     }
 
     private void Start()
     {
+        SettingsMenuUI.SetActive(false);
+        ProfileMenuUI.SetActive(false);
+        AddProfileMenuUI.SetActive(false);
+        RemoveProfileMenuUI.SetActive(false);
+
         if (SceneManager.GetActiveScene().name == "Menu_Anglais")
         {
             Language = "Anglais";
@@ -37,21 +47,23 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         {
             Language = "Français";
         }
+
+        DataPersistenceManager.instance.SaveGame();
     }
+
 
     public void ChangeMenu()
     {
         DisableMenuButtons();
+        DataPersistenceManager.instance.SaveGame();
         if (Language == "Français")
         {
             Language = "Anglais";
-            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Anglais");
         }
         else
         {
             Language = "Français";
-            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadSceneAsync("Menu_Français");
         }
     }
@@ -60,8 +72,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     {
         DisableMenuButtons();
         // initialize game data
-        DataPersistenceManager.instance.NewGame();
-        // Prepare and laod scene
         Time.timeScale = 1f;
 
         DataPersistenceManager.instance.SaveGame();
@@ -70,9 +80,19 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
     public void LoadEvaluation()
     {
-        DisableMenuButtons();
-        Time.timeScale = 1f;
+        TMPro.TMP_Dropdown D = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
+        // Make sure they selected a profile Id
+        if (D.value == 0)
+        {
+            TextMeshProUGUI DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
+            DText.color = Color.red;
+            return;
+        }
 
+        // If Id is selected
+        DisableMenuButtons();
+        profileId = D.options[D.value].text;
+        Time.timeScale = 1f;
         DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Evaluation");
     }
@@ -87,8 +107,29 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     private void DisableMenuButtons()
     {
         TutorialButton.interactable = false;
-        StartGameButton.interactable = false;
+        SettingsButton.interactable = false;
         LanguageGameButton.interactable = false;
         QuitGameButton.interactable = false;
+    }
+
+    public void EnterSettings()
+    {
+        DataPersistenceManager.instance.SaveGame();
+        SettingsMenuUI.SetActive(true);
+    }
+
+    public void ExitSettings()
+    {
+        SettingsMenuUI.SetActive(false);
+    }
+
+    public void OpenProileMenu()
+    {
+        ProfileMenuUI.SetActive(true);
+    }
+
+    public void ExitProfileMenu()
+    {
+        ProfileMenuUI.SetActive(false);
     }
 }
