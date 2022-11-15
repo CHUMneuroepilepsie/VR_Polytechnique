@@ -9,6 +9,8 @@ public class GameData
     public string Language;
     public float volume;
     public int Level;
+
+
     public SerializableDictionary<string, bool> checkpointPassed;
     public GameData()
     {
