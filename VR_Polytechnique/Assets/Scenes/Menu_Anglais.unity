@@ -1857,6 +1857,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1464032484}
+    - target: {fileID: 1789323121358634202, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_text
+      value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323121358634202, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323121358634203, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323121947323958, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_text
+      value: Date
+      objectReference: {fileID: 0}
     - target: {fileID: 1789323122039496128, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
       propertyPath: m_text
@@ -1866,6 +1886,16 @@ PrefabInstance:
 
         You will not
         be able to recover its data.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122911856864, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_text
+      value: Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789323122911856864, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1789323122978021378, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
