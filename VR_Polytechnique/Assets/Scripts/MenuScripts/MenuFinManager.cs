@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using System.IO;
+//using System.Text.Json;
 
 public class MenuFinManager : MonoBehaviour, IDataPersistence
 {
@@ -15,6 +17,11 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
     private bool isSaved;
     private string fileName = "Evaluation_Results";
     private GameObject ConfirmationText;
+
+    public class donnees
+    {
+        public int profileId { get; set; }
+    }
 
     private void Start()
     {
@@ -71,6 +78,8 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
             eData.time = TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss\:fff");
             eData.lvl = lvl;
             pData.evaluationData.Add(eData);
+
+            print(pData);
 
             dataHandler.SaveEvaluation(pData);
             isSaved = true;

@@ -8,7 +8,7 @@ public class SplashScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("LoadMainGame", 5f);
+        Invoke("LoadMainGame", 1f);
     }
 
     void LoadMainGame()

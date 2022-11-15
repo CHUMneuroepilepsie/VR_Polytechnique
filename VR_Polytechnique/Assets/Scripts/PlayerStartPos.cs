@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStartPos : MonoBehaviour, IDataPersistence
 {
     private int lvl = 0;
+    public GameObject Player;
 
     public void LoadData(GameData data)
     {
@@ -22,23 +23,17 @@ public class PlayerStartPos : MonoBehaviour, IDataPersistence
     {
         if (lvl == 1)
         {
-            transform.position = new Vector3(0, 50, 10);
+            Player.transform.position = new Vector3(300, 50, 10);
         }
 
         else if (lvl == 2)
         {
-            transform.position = new Vector3(0, 200, 10);
+            Player.transform.position = new Vector3(0, 200, 10);
         }
 
         else if (lvl == 3)
         {
-            transform.position = new Vector3(0, 400, 10);
+            Player.transform.position = new Vector3(0, 400, 10);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
