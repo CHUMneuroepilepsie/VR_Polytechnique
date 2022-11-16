@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System.IO;
-using Unity.VisualScripting;
 
 public class ProfilePanel : MonoBehaviour, IDataPersistence
 {
@@ -129,6 +128,12 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
     private void ShowInformations()
     {
+        if (currentClickedButton == null)
+        {
+            ResetInformation();
+            return;
+        }
+
         string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
         if (currentClickedButton.interactable == true || profileId == DEFAULT)
         {
