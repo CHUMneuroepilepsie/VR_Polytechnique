@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class AddProfilePanel : MonoBehaviour, IDataPersistence
 {
+    public ProfilePanel pPanel;
     List<string> AvailableIds = new List<string>();
     public TextMeshProUGUI new_id;
     public TextMeshProUGUI dateOfBirth;
@@ -79,7 +80,13 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.SetActive(true);
             return;
         }
-        if (date.Split('-').Count() != 3)
+
+        List<string> dateSplits = new List<string>();
+        date = date.Remove(date.Length - 1);
+        dateSplits.AddRange(date.Split('-'));
+        if (dateSplits.Count() != 3 || dateSplits[0].Length != 4 
+            || dateSplits[1].Length != 2 || dateSplits[2].Length != 2
+            || !dateSplits.TrueForAll(isNumber))
         {
             if (Language == "Anglais")
             {
@@ -98,7 +105,6 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         AvailableIds.Add(id);
         SaveProfile();
         DataPersistenceManager.instance.SaveGame();
-
         if (Language == "Anglais")
         {
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
@@ -109,6 +115,9 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
             warningText.GetComponent<TextMeshProUGUI>().text = "Profil ajouté!";
         }
+        warningText.SetActive(true);
+        DataPersistenceManager.instance.LoadGame();
+        pPanel.UpdatePanel();
     }
 
     public void SaveProfile()
@@ -121,5 +130,10 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         pData.dateOfBirth = dateOfBirth.text;
 
         dataHandler.SaveEvaluation(pData);
+    }
+
+    private static bool isNumber(string s)
+    {
+        return int.TryParse(s, out _);
     }
 }
