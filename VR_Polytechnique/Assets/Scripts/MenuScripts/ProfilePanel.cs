@@ -36,7 +36,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-       data.AvailableIds = AvailableIds.OrderBy(q => q).ToList();
+       data.AvailableIds = AvailableIds.OrderByDescending(q => q).ToList();
     }
 
     void OnEnable()
@@ -152,7 +152,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         }
         else
         {
-            NameText.text = pData.profileName;
+            NameText.text = "******";
         }
         
         int i = pData.evaluationData.Count - 1;

@@ -1940,7 +1940,7 @@ PrefabInstance:
     - target: {fileID: 1789323123095044378, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1789323123095044381, guid: f506bf53f40e9ab45b76bcb83dfac752,
         type: 3}
@@ -2107,6 +2107,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.0000038147
       objectReference: {fileID: 0}
+    - target: {fileID: 7510789863082309766, guid: f506bf53f40e9ab45b76bcb83dfac752,
+        type: 3}
+      propertyPath: m_text
+      value: Search Id
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f506bf53f40e9ab45b76bcb83dfac752, type: 3}
 --- !u!1001 &6503470085479678073
@@ -2120,7 +2125,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1464032484}
+      objectReference: {fileID: 6503470085479678074}
+    - target: {fileID: 2289528269713292295, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadEvaluation
+      objectReference: {fileID: 0}
     - target: {fileID: 2342191290687163183, guid: 329c498908ada514a888d5278982867a,
         type: 3}
       propertyPath: m_text
@@ -2130,6 +2140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.z
       value: -4.045121
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785283306616080932, guid: 329c498908ada514a888d5278982867a,
+        type: 3}
+      propertyPath: m_text
+      value: "\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 6503470084175714784, guid: 329c498908ada514a888d5278982867a,
         type: 3}
@@ -2263,6 +2278,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 329c498908ada514a888d5278982867a, type: 3}
+--- !u!114 &6503470085479678074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4462266034140992208, guid: 329c498908ada514a888d5278982867a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6503470085479678073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325277006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ceea3ce2e9c9aa42849aff197edc2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8004908525710028598
 PrefabInstance:
   m_ObjectHideFlags: 0

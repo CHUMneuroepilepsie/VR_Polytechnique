@@ -78,25 +78,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         SceneManager.LoadSceneAsync("Mode_Apprentissage");
     }
 
-    public void LoadEvaluation()
-    {
-        TMPro.TMP_Dropdown D = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
-        // Make sure they selected a profile Id
-        if (D.value == 0)
-        {
-            TextMeshProUGUI DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
-            DText.color = Color.red;
-            return;
-        }
-
-        // If Id is selected
-        DisableMenuButtons();
-        profileId = D.options[D.value].text;
-        Time.timeScale = 1f;
-        DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("Mode_Evaluation");
-    }
-
     public void QuitGame()
     {
         DisableMenuButtons();
