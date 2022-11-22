@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19559154, g: 0.23698464, b: 0.31058574, a: 1}
+  m_IndirectSpecularColor: {r: 0.19557694, g: 0.23695657, b: 0.310541, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,6 +347,18 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!114 &293085477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1211085177519812451, guid: cd92b93b5a0f74345a0076af00d93140,
+    type: 3}
+  m_PrefabInstance: {fileID: 1211085176189171355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b20170b27e41e34dbb928588afe14c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &380740869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,6 +449,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5369393561213510473}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &656296694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7047345400278796597, guid: 7ad93711498ae6d4a9701f399b7e87a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7047345400195104833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &656296702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656296694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1eda6fc386c991046bd774a4b4bd9dae,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 293085477}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenPauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 98936418-5cb3-4366-ab4d-260929acb490
+    m_ActionName: PauseMenu/MenuIsPressed
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PauseMenu
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &773330130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,9 +2582,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1422487062742766140, guid: 7ad93711498ae6d4a9701f399b7e87a4,
+        type: 3}
+      propertyPath: m_Device
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422487062742766140, guid: 7ad93711498ae6d4a9701f399b7e87a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422487062742766140, guid: 7ad93711498ae6d4a9701f399b7e87a4,
+        type: 3}
+      propertyPath: m_PoseSource
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7047345400278796597, guid: 7ad93711498ae6d4a9701f399b7e87a4,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047345400278796597, guid: 7ad93711498ae6d4a9701f399b7e87a4,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7047345400278796603, guid: 7ad93711498ae6d4a9701f399b7e87a4,
@@ -2535,7 +2620,7 @@ PrefabInstance:
     - target: {fileID: 7047345400278796603, guid: 7ad93711498ae6d4a9701f399b7e87a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7047345400278796603, guid: 7ad93711498ae6d4a9701f399b7e87a4,
         type: 3}
