@@ -4,24 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using UnityEngine.Rendering;
+using System.IO;
 
 public class ProfilePanel : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private Button[] buttons;
     [SerializeField] private Button forwardArrow;
     [SerializeField] private Button backArrow;
+    private Button currentClickedButton;
+
+    public GameObject AddProfileMenuUI;
+    public GameObject RemoveProfileMenuUI;
+    public TextMeshProUGUI IdText;
+    public TextMeshProUGUI DateOfBirthText;
+    public TextMeshProUGUI NameText;
+    public GameObject EvalText1;
+    public GameObject EvalText2;
+    public GameObject EvalText3;
+
     List<string> AvailableIds = new List<string>();
     private const int NBOPTIONS = 4;
     private int pageNb;
     private string Language;
-    public GameObject AddProfileMenuUI;
-    public GameObject RemoveProfileMenuUI;
+    const string DEFAULT = "-----";
+    private string fileName = "Evaluation_Results";
     public void LoadData(GameData data)
     {
        AvailableIds = data.AvailableIds;
-        Language = data.Language;
+       Language = data.Language;
     }
 
     public void SaveData(GameData data)
@@ -61,24 +71,22 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
             return;
 
         SetAllButtonsInteractable();
-
         clickedButton.interactable = false;
+        currentClickedButton = clickedButton;
 
-        //TODO - Show information on the right side
+        ShowInformations();
     }
 
     public void OnForwardArrowClicked()
     {
         pageNb++;
-        LoadArrowsStatus();
-        ShowIds();
+        UpdatePanel();
     }
 
     public void OnBackArrowClicked()
     {
         pageNb--;
-        LoadArrowsStatus();
-        ShowIds();
+        UpdatePanel();
     }
 
     private void ShowIds()
@@ -92,15 +100,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
             }
             else
             {
-                if (Language == "Anglais")
-                {
-                    button.GetComponentInChildren<TextMeshProUGUI>().text = "Empty";
-                }
-                else
-                {
-                    button.GetComponentInChildren<TextMeshProUGUI>().text = "Vide";
-                }
-                
+                button.GetComponentInChildren<TextMeshProUGUI>().text = DEFAULT;
             }
             i++;
         }
@@ -126,16 +126,108 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         }
     }
 
-    //TODO - Remove a profile 
-    public void RemoveProfile()
+    private void ShowInformations()
     {
-        //TODO - Remove from directory
+        if (currentClickedButton == null)
+        {
+            ResetInformation();
+            return;
+        }
 
-        //TODO - Remove from settings file
+        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        if (currentClickedButton.interactable == true || profileId == DEFAULT)
+        {
+            ResetInformation();
+            return;
+        }
 
-        DataPersistenceManager.instance.LoadGame();
+        FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        ProfileData pData = dataHandler.LoadProfile(profileId);
+
+        IdText.text = pData.profileId;
+        DateOfBirthText.text = pData.dateOfBirth;
+        if (pData.profileName.Length == 1)
+        {
+            NameText.text = DEFAULT;
+        }
+        else
+        {
+            NameText.text = pData.profileName;
+        }
+        
+        int i = pData.evaluationData.Count - 1;
+        foreach (GameObject g in new List<GameObject> {EvalText1, EvalText2, EvalText3})
+        {
+            if (i < 0)
+            {
+                foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
+                {
+                    t.text = DEFAULT;
+                }
+            }
+            else
+            {
+                foreach (TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
+                {
+                    if (t.gameObject.name.Substring(t.gameObject.name.Length - 4) == "Date")
+                    {
+                        t.text = pData.evaluationData[i].date;
+                    }
+                    else if (t.gameObject.name.Substring(t.gameObject.name.Length - 3) == "Lvl")
+                    {
+                        t.text = pData.evaluationData[i].lvl.ToString();
+                    }
+                    else if (t.gameObject.name.Substring(t.gameObject.name.Length - 4) == "Time")
+                    {
+                        t.text = pData.evaluationData[i].time;
+                    }
+                }
+            }
+            i--;
+        }
+    }
+
+    private void ResetInformation()
+    {
+        foreach (TextMeshProUGUI t in new List<TextMeshProUGUI> {IdText, NameText, DateOfBirthText})
+        {
+            t.text = DEFAULT;
+        }
+        foreach(GameObject g in new List<GameObject> {EvalText1, EvalText2, EvalText3})
+        {
+            foreach(TextMeshProUGUI t in g.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                t.text = DEFAULT;
+            }
+        }
+    }
+
+    public void UpdatePanel()
+    {
         LoadArrowsStatus();
         ShowIds();
+        ShowInformations();
+    }
+
+    public void RemoveProfile()
+    {
+        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        string fullPath = Path.Combine(Application.persistentDataPath, profileId);
+        try
+        {
+            Directory.Delete(fullPath, true);
+            AvailableIds.Remove(profileId);
+        }
+        catch
+        {
+            Debug.Log("This Id does not have a directory");
+        }
+        
+        DataPersistenceManager.instance.SaveGame();
+        DataPersistenceManager.instance.LoadGame();
+
+        RemoveProfileMenuUI.SetActive(false);
+        UpdatePanel();
     }
 
     public void OpenAddProileMenu()
@@ -146,9 +238,6 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     public void ExitAddProfileMenu()
     {
         AddProfileMenuUI.SetActive(false);
-        DataPersistenceManager.instance.LoadGame();
-        LoadArrowsStatus();
-        ShowIds();
     }
 
     public void RemoveProfileWarning()
