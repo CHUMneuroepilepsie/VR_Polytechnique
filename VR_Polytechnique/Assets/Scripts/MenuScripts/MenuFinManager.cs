@@ -75,7 +75,7 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
             EvaluationData eData = new EvaluationData();
             DateTime date = DateTime.Now;
             eData.date = date.ToString("g");
-            eData.time = TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss\:fff");
+            eData.time = TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss");
             eData.lvl = lvl;
             pData.evaluationData.Add(eData);
 
