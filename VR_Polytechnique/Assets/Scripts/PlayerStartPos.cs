@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerStartPos : MonoBehaviour, IDataPersistence
 {
@@ -23,17 +24,32 @@ public class PlayerStartPos : MonoBehaviour, IDataPersistence
     {
         if (lvl == 1)
         {
-            Player.transform.position = new Vector3(300, 50, 10);
+            float x = Convert.ToSingle(256.17);
+            float y = Convert.ToSingle(1.82);
+            float z = Convert.ToSingle(579.97);
+            Player.transform.position = new Vector3(x, y, z);
+            Quaternion target = Quaternion.Euler(0, -68, 0);
+            Player.transform.rotation = target;
         }
 
         else if (lvl == 2)
         {
-            Player.transform.position = new Vector3(0, 200, 10);
+            float x = Convert.ToSingle(440.52);
+            float y = Convert.ToSingle(9.77);
+            float z = Convert.ToSingle(584.32);
+            Player.transform.position = new Vector3(x, y, z);
+            Quaternion target = Quaternion.Euler(0, 225, 0);
+            Player.transform.rotation = target;
         }
 
         else if (lvl == 3)
         {
-            Player.transform.position = new Vector3(0, 400, 10);
+            float x = Convert.ToSingle(687.99);
+            float y = Convert.ToSingle(3.04);
+            float z = Convert.ToSingle(612.2);
+            Player.transform.position = new Vector3(x, y, z);
+            Quaternion target = Quaternion.Euler(0, -90, 0);
+            Player.transform.rotation = target;
         }
     }
 }

@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class SaveExcel : MonoBehaviour
 {
-    string filepath = "C:\\Users\\lucas\\AppData\\LocalLow\\DefaultCompany\\My project\\422\\Evaluation_Results.json";
-    
+    // string filepath = "C:\\Users\\lucas\\AppData\\LocalLow\\DefaultCompany\\My project\\422\\Evaluation_Results.json";
+    string filepath = "C:\\Users\\lucas\\Documents\\tests_excel\\Evaluation_Results";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,33 +19,44 @@ public class SaveExcel : MonoBehaviour
     {
         using (StreamReader r = new StreamReader(filepath))
         {
-            string json = r.ReadToEnd();
-            var obj = JsonConvert.DeserializeObject<JObject>(json);
+            string line;
+            // Read and display lines from the file until the end of
+            // the file is reached.
+            //while ((line = r.ReadToEnd()) != null)
+            //{
+            //    print(line);
+            //}
 
-            List<JsonData> dataList = GetDataList(obj);
+            line = r.ReadToEnd();
+            Debug.Log(line);
 
-            var fileName = file.Split('\\').Last().Split('.')[0].Trim().ToString();
+            //string json = r.ReadToEnd();
+            //var obj = JsonConvert.DeserializeObject<JObject>(json);
 
-            using (ExcelPackage excel = new ExcelPackage())
-            {
-                excel.Workbook.Worksheets.Add(fileName);
+            //List<JsonData> dataList = GetDataList(obj);
 
-                var headerRow = new List<string[]>()
-                        {
-                                new string[] { "Key", "Value"}
-                            };
+            //var fileName = file.Split('\\').Last().Split('.')[0].Trim().ToString();
 
-                string headerRange = "A1:" + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+            //using (ExcelPackage excel = new ExcelPackage())
+            //{
+            //    excel.Workbook.Worksheets.Add(fileName);
 
-                var worksheet = excel.Workbook.Worksheets[fileName];
+            //    var headerRow = new List<string[]>()
+            //            {
+            //                    new string[] { "Key", "Value"}
+            //                };
 
-                worksheet.Cells[headerRange].LoadFromArrays(headerRow);
+            //    string headerRange = "A1:" + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
 
-                worksheet.Cells[2, 1].LoadFromCollection(dataList);
+            //    var worksheet = excel.Workbook.Worksheets[fileName];
 
-                FileInfo excelFile = new FileInfo($"D:\\JsonFilesToExcel\\{folder}\\{fileName}.xlsx");
-                excel.SaveAs(excelFile);
-            }
+            //    worksheet.Cells[headerRange].LoadFromArrays(headerRow);
+
+            //    worksheet.Cells[2, 1].LoadFromCollection(dataList);
+
+            //    FileInfo excelFile = new FileInfo($"D:\\JsonFilesToExcel\\{folder}\\{fileName}.xlsx");
+            //    excel.SaveAs(excelFile);
+            //}
         }
     }
 }
