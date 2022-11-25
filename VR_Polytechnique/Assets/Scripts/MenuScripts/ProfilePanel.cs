@@ -21,6 +21,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     public GameObject EvalText1;
     public GameObject EvalText2;
     public GameObject EvalText3;
+    public GameObject searchBar;
 
     List<string> AvailableIds = new List<string>();
     private const int NBOPTIONS = 4;
@@ -228,6 +229,40 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
         RemoveProfileMenuUI.SetActive(false);
         UpdatePanel();
+    }
+
+    public void SearchProfile()
+    {
+        string searchText = searchBar.GetComponent<TMP_InputField>().text;
+        if (searchText.Length == 0) { LoadArrowsStatus(); }
+        else
+        {
+            forwardArrow.interactable = false;
+            backArrow.interactable = false;
+        }
+        List<string> listIds = AvailableIds.FindAll(FindProfile);
+        int i = 0;
+        foreach (Button button in buttons)
+        {
+            if (listIds.Count > i)
+            {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = listIds[i];
+            }
+            else
+            {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = DEFAULT;
+            }
+            i++;
+        }
+    }
+
+    private bool FindProfile(string id)
+    {
+        string searchText = searchBar.GetComponent<TMP_InputField>().text;
+        if (searchText.Length <= id.Length){
+            return id.Substring(0, searchText.Length) == searchText;
+        }
+        return false;
     }
 
     public void OpenAddProileMenu()

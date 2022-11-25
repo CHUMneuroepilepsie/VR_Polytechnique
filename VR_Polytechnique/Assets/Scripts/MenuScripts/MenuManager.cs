@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public GameObject ProfileMenuUI;
     public GameObject AddProfileMenuUI;
     public GameObject RemoveProfileMenuUI;
-    private string profileId;
+    public IDataPersistence MENU;
     public void LoadData(GameData data)
     {
         // Load data when entering scene (DO NOT DELETE)
@@ -29,7 +29,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.Language = this.Language;
-        data.profileId = profileId;
     }
 
     private void Start()
@@ -47,7 +46,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         {
             Language = "Français";
         }
-
         DataPersistenceManager.instance.SaveGame();
     }
 

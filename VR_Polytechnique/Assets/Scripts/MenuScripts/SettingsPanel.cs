@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SettingsPanel : MonoBehaviour, IDataPersistence
 {
     List<string> AvailableIds = new List<string>();
-    private TextMeshProUGUI Id;
+    public TextMeshProUGUI Id;
     TextMeshProUGUI bText;
     public GameObject InputId;
     public GameObject backgroundText;
@@ -19,8 +19,7 @@ public class SettingsPanel : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        data.AvailableIds = this.AvailableIds.OrderBy(q => q).ToList();
-        data.profileId = Id.text;
+        if (Id != null) {data.profileId = Id.text; }
     }
 
     void OnEnable()
