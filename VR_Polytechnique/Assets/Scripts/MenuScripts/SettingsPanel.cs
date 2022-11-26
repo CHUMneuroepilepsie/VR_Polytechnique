@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class SettingsPanel : MonoBehaviour, IDataPersistence
 {
     List<string> AvailableIds = new List<string>();
-    public TextMeshProUGUI Id;
+    private TextMeshProUGUI IdText;
     TextMeshProUGUI bText;
     public GameObject InputId;
     public GameObject backgroundText;
+    public GameObject idInputField;
 
     public void LoadData(GameData data)
     {
@@ -19,7 +20,7 @@ public class SettingsPanel : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        if (Id != null) {data.profileId = Id.text; }
+        data.profileId = idInputField.GetComponent<TMP_InputField>().text;
     }
 
     void OnEnable()
@@ -27,10 +28,10 @@ public class SettingsPanel : MonoBehaviour, IDataPersistence
         // Security in case SettingsPanel was enabled on launch (which should not be the case in the builded game
         try
         {
-            Id = InputId.GetComponent<TMPro.TextMeshProUGUI>();
-            bText = backgroundText.GetComponent<TMPro.TextMeshProUGUI>();
+            IdText = InputId.GetComponent<TextMeshProUGUI>();
+            bText = backgroundText.GetComponent<TextMeshProUGUI>();
             bText.color = Color.black;
-            Id.color = Color.black;
+            IdText.color = Color.black;
         }
         catch
         {
@@ -40,16 +41,18 @@ public class SettingsPanel : MonoBehaviour, IDataPersistence
 
     public void LoadEvaluation()
     {
+        //Id text uses invisble characters
+        string Id = idInputField.GetComponent<TMP_InputField>().text;
         // Make sure they selected a profile Id
-        if (Id.text.Length == 1)
+        if (Id.Length == 0)
         {
             bText.color = Color.red;
-            Id.color = Color.black;
+            IdText.color = Color.black;
             return;
         }
-        else if (!AvailableIds.Contains(Id.text))
+        else if (!AvailableIds.Contains(Id))
         {
-            Id.color = Color.red;
+            IdText.color = Color.red;
             bText.color = Color.black;
             return;
         }
