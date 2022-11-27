@@ -26,7 +26,14 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
     {
         if (context.performed)
         {
-            PauseGame();
+            if (GameIsPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
     private void Start()
