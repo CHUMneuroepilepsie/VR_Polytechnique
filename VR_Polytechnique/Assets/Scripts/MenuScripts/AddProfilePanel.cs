@@ -52,12 +52,12 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         dateText.color = Color.white;
         warningText.SetActive(false);
 
-        if (id.Length == 1)
+        if (id.Length == 0)
         {
             idText.color = Color.red;
             return;
         }
-        if (date.Length == 1)
+        if (date.Length == 0)
         {
             dateText.color = Color.red;
             return;
@@ -79,7 +79,6 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         }
 
         List<string> dateSplits = new List<string>();
-        //date = date.Remove(date.Length - 1);
         dateSplits.AddRange(date.Split('-'));
         if (dateSplits.Count() != 3 || dateSplits[0].Length != 4 
             || dateSplits[1].Length != 2 || dateSplits[2].Length != 2
