@@ -11,6 +11,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     [SerializeField] private Button[] buttons;
     [SerializeField] private Button forwardArrow;
     [SerializeField] private Button backArrow;
+
     private Button currentClickedButton;
 
     public GameObject AddProfileMenuUI;
@@ -21,6 +22,11 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     public GameObject EvalText1;
     public GameObject EvalText2;
     public GameObject EvalText3;
+    public GameObject searchBar;
+    public GameObject ModifyButton;
+    public GameObject SaveButton;
+    public GameObject IdModifyInput;
+    public GameObject dateModifyInput;
 
     List<string> AvailableIds = new List<string>();
     private const int NBOPTIONS = 4;
@@ -28,6 +34,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     private string Language;
     const string DEFAULT = "-----";
     private string fileName = "Evaluation_Results";
+    private bool isModifyActive = false;
     public void LoadData(GameData data)
     {
        AvailableIds = data.AvailableIds;
@@ -36,7 +43,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-       data.AvailableIds = AvailableIds.OrderBy(q => q).ToList();
+       data.AvailableIds = AvailableIds.OrderByDescending(q => q).ToList();
     }
 
     void OnEnable()
@@ -48,6 +55,18 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
             DataPersistenceManager.instance.LoadGame();
             LoadArrowsStatus();
             ShowIds();
+            SaveButton.SetActive(false);
+            ModifyButton.SetActive(false);
+            IdModifyInput.SetActive(false);
+            dateModifyInput.SetActive(false);
+            if (Language == "Anglais")
+            {
+                ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Modify";
+            }
+            else
+            {
+                ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Modifier";
+            }
         }
         catch
         {
@@ -152,9 +171,10 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         }
         else
         {
-            NameText.text = pData.profileName;
+            NameText.text = "******";
         }
         
+        ModifyButton.SetActive(true);
         int i = pData.evaluationData.Count - 1;
         foreach (GameObject g in new List<GameObject> {EvalText1, EvalText2, EvalText3})
         {
@@ -189,6 +209,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
     private void ResetInformation()
     {
+        ModifyButton.SetActive(false);
         foreach (TextMeshProUGUI t in new List<TextMeshProUGUI> {IdText, NameText, DateOfBirthText})
         {
             t.text = DEFAULT;
@@ -228,6 +249,99 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
 
         RemoveProfileMenuUI.SetActive(false);
         UpdatePanel();
+    }
+
+    public void SearchProfile()
+    {
+        string searchText = searchBar.GetComponent<TMP_InputField>().text;
+        if (searchText.Length == 0) { LoadArrowsStatus(); }
+        else
+        {
+            forwardArrow.interactable = false;
+            backArrow.interactable = false;
+        }
+        List<string> listIds = AvailableIds.FindAll(FindProfile);
+        int i = 0;
+        foreach (Button button in buttons)
+        {
+            if (listIds.Count > i)
+            {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = listIds[i];
+            }
+            else
+            {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = DEFAULT;
+            }
+            i++;
+        }
+    }
+
+    private bool FindProfile(string id)
+    {
+        string searchText = searchBar.GetComponent<TMP_InputField>().text;
+        if (searchText.Length <= id.Length){
+            return id.Substring(0, searchText.Length) == searchText;
+        }
+        return false;
+    }
+
+
+    public void ModifyProfile()
+    {
+        if (isModifyActive)
+        {
+            SaveButton.SetActive(false);
+            IdModifyInput.SetActive(false);
+            dateModifyInput.SetActive(false);
+            if (Language == "Anglais")
+            {
+                ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Modify";
+            }
+            else
+            {
+                ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Modifier";
+            }
+            isModifyActive = false;
+            return;
+        }
+
+        isModifyActive = true;
+        if(Language == "Anglais")
+        {
+            ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Cancel";
+        }
+        else
+        {
+            ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Anuler";
+        }
+
+        SaveButton.SetActive(true);
+        IdModifyInput.SetActive(true);
+        dateModifyInput.SetActive(true);
+
+        IdModifyInput.GetComponent<TMP_InputField>().text = IdText.text;
+        dateModifyInput.GetComponent<TMP_InputField>().text = DateOfBirthText.text;
+    }
+
+    public void SaveModifications()
+    {
+        string new_id = IdModifyInput.GetComponent<TMP_InputField>().text;
+        string new_date = dateModifyInput.GetComponent<TMP_InputField>().text;
+        FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        ProfileData pData = dataHandler.LoadProfile(IdText.text);
+        if (IdText.text != new_id)
+        {
+            RemoveProfile();
+            AvailableIds.Add(new_id);
+            DataPersistenceManager.instance.SaveGame();
+            DataPersistenceManager.instance.LoadGame();
+        }
+        
+        pData.profileId = new_id;
+        pData.dateOfBirth = new_date;
+        dataHandler.SaveEvaluation(pData);
+        UpdatePanel();
+        ModifyProfile();
     }
 
     public void OpenAddProileMenu()
