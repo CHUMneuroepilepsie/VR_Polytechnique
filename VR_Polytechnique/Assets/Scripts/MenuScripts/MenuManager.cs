@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Globalization;
-using System;
 
 public class MenuManager : MonoBehaviour, IDataPersistence
 {
@@ -20,7 +15,7 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public GameObject ProfileMenuUI;
     public GameObject AddProfileMenuUI;
     public GameObject RemoveProfileMenuUI;
-    private string profileId;
+    public IDataPersistence MENU;
     public void LoadData(GameData data)
     {
         // Load data when entering scene (DO NOT DELETE)
@@ -29,7 +24,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.Language = this.Language;
-        data.profileId = profileId;
     }
 
     private void Start()
@@ -47,7 +41,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
         {
             Language = "Français";
         }
-
         DataPersistenceManager.instance.SaveGame();
     }
 
@@ -76,25 +69,6 @@ public class MenuManager : MonoBehaviour, IDataPersistence
 
         DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadSceneAsync("Mode_Apprentissage");
-    }
-
-    public void LoadEvaluation()
-    {
-        TMPro.TMP_Dropdown D = GameObject.Find("UserDropdown").GetComponent<TMPro.TMP_Dropdown>();
-        // Make sure they selected a profile Id
-        if (D.value == 0)
-        {
-            TextMeshProUGUI DText = GameObject.Find("IdLabel").GetComponent<TMPro.TextMeshProUGUI>();
-            DText.color = Color.red;
-            return;
-        }
-
-        // If Id is selected
-        DisableMenuButtons();
-        profileId = D.options[D.value].text;
-        Time.timeScale = 1f;
-        DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("Mode_Evaluation");
     }
 
     public void QuitGame()
