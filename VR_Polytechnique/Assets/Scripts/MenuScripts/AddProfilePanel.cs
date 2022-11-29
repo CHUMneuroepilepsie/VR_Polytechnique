@@ -33,6 +33,9 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         {
             DataPersistenceManager.instance.LoadGame();
             warningText.SetActive(false);
+            IdInput.GetComponent<TMP_InputField>().text = "";
+            dateOfBirthInput.GetComponent<TMP_InputField>().text = "";
+            nameInput.GetComponent<TMP_InputField>().text = "";
         }
         catch
         {
