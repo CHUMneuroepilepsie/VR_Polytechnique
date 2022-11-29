@@ -18,11 +18,6 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
     private string fileName = "Evaluation_Results";
     private GameObject ConfirmationText;
 
-    public class donnees
-    {
-        public int profileId { get; set; }
-    }
-
     private void Start()
     {
         ConfirmationText = GameObject.Find("ConfirmationText");
@@ -78,8 +73,6 @@ public class MenuFinManager : MonoBehaviour, IDataPersistence
             eData.time = TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss");
             eData.lvl = lvl;
             pData.evaluationData.Add(eData);
-
-            print(pData);
 
             dataHandler.SaveEvaluation(pData);
             isSaved = true;
