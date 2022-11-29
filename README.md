@@ -12,7 +12,7 @@ Unity version 2021.3.10f1
 * Beaudoin-Dumas, Gabriel (gabriel.beaudoin-dumas@polymtl.ca)
 * Bouchard, Lucas (lucas.bouchard@polymtl.ca)
 * Bréhéret, Arnaud (arnaud.breheret@polymtl.ca)
-* Diouri, Yassine ( yassine-mohamed.diouri@polymtl.ca
+* Diouri, Yassine (yassine-mohamed.diouri@polymtl.ca)
 * Doré-Walsh, Emmanuel (emmanuel.dore.walsh@hotmail.com)
 * Gharsallah, Fatima (fatima.gharsallah@polymtl.ca)
 * Skaf, Andréa (andrea.skaf@polymtl.ca)

@@ -1,20 +1,18 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Profiling;
-using UnityEngine.UI;
+
 
 public class AddProfilePanel : MonoBehaviour, IDataPersistence
 {
+    public ProfilePanel pPanel;
     List<string> AvailableIds = new List<string>();
-    public TextMeshProUGUI new_id;
-    public TextMeshProUGUI dateOfBirth;
-    public TextMeshProUGUI fullName;
     public GameObject warningText;
+    public GameObject IdInput;
+    public GameObject dateOfBirthInput;
+    public GameObject nameInput;
+
     private string fileName = "Evaluation_Results";
     private string Language;
     public void LoadData(GameData data)
@@ -35,6 +33,9 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         {
             DataPersistenceManager.instance.LoadGame();
             warningText.SetActive(false);
+            IdInput.GetComponent<TMP_InputField>().text = "";
+            dateOfBirthInput.GetComponent<TMP_InputField>().text = "";
+            nameInput.GetComponent<TMP_InputField>().text = "";
         }
         catch
         {
@@ -45,8 +46,8 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
     public void AddProfile()
     {
         DataPersistenceManager.instance.LoadGame();
-        string id = new_id.text;
-        string date = dateOfBirth.text;
+        string id = IdInput.GetComponent<TMP_InputField>().text;
+        string date = dateOfBirthInput.GetComponent<TMP_InputField>().text;
         TextMeshProUGUI idText = GameObject.Find("IdText (TMP)").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI dateText = GameObject.Find("DateOfBirthInputText").GetComponent<TextMeshProUGUI>();
 
@@ -54,12 +55,12 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         dateText.color = Color.white;
         warningText.SetActive(false);
 
-        if (id.Length == 1)
+        if (id.Length == 0)
         {
             idText.color = Color.red;
             return;
         }
-        if (date.Length == 1)
+        if (date.Length == 0)
         {
             dateText.color = Color.red;
             return;
@@ -79,7 +80,12 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.SetActive(true);
             return;
         }
-        if (date.Split('-').Count() != 3)
+
+        List<string> dateSplits = new List<string>();
+        dateSplits.AddRange(date.Split('-'));
+        if (dateSplits.Count() != 3 || dateSplits[0].Length != 4 
+            || dateSplits[1].Length != 2 || dateSplits[2].Length != 2
+            || !dateSplits.TrueForAll(isNumber))
         {
             if (Language == "Anglais")
             {
@@ -98,7 +104,6 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
         AvailableIds.Add(id);
         SaveProfile();
         DataPersistenceManager.instance.SaveGame();
-
         if (Language == "Anglais")
         {
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
@@ -109,17 +114,25 @@ public class AddProfilePanel : MonoBehaviour, IDataPersistence
             warningText.GetComponent<TextMeshProUGUI>().color = Color.white;
             warningText.GetComponent<TextMeshProUGUI>().text = "Profil ajouté!";
         }
+        warningText.SetActive(true);
+        DataPersistenceManager.instance.LoadGame();
+        pPanel.UpdatePanel();
     }
 
     public void SaveProfile()
     {
         FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-        ProfileData pData = dataHandler.LoadProfile(new_id.text);
+        ProfileData pData = dataHandler.LoadProfile(IdInput.GetComponent<TMP_InputField>().text);
 
-        pData.profileName = fullName.text;
-        pData.profileId = new_id.text;
-        pData.dateOfBirth = dateOfBirth.text;
+        pData.profileName = nameInput.GetComponent<TMP_InputField>().text;
+        pData.profileId = IdInput.GetComponent<TMP_InputField>().text;
+        pData.dateOfBirth = dateOfBirthInput.GetComponent<TMP_InputField>().text;
 
         dataHandler.SaveEvaluation(pData);
+    }
+
+    private static bool isNumber(string s)
+    {
+        return int.TryParse(s, out _);
     }
 }
