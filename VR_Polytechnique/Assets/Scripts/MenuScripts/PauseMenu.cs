@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour, IDataPersistence
 {
@@ -21,17 +22,21 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
     {
         // DO NOT DELETE
     }
-
+    public void OpenPauseMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            MenuPause();
+        }
+    }
     private void Start()
     {
         GameIsPaused = false;
         pauseMenuUI.SetActive(false);
     }
 
-    void Update()
+    void MenuPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             if (GameIsPaused)
             {
                 ResumeGame();
@@ -40,7 +45,6 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
             {
                 PauseGame(); 
             }
-        }
     }
 
     public void ResumeGame()

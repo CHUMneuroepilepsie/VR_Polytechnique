@@ -1150,6 +1150,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3244854638228667523, guid: 620e211041283814c9e16be563d1beb1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244854638228667523, guid: 620e211041283814c9e16be563d1beb1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 5690320473308969440, guid: 620e211041283814c9e16be563d1beb1,
         type: 3}
       propertyPath: m_text
@@ -1304,6 +1314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VolumeSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487384247426300743, guid: b450e93f89fb3384ba7e25af0bde560a,
+        type: 3}
+      propertyPath: m_Value
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 2487384247426300743, guid: b450e93f89fb3384ba7e25af0bde560a,
         type: 3}
