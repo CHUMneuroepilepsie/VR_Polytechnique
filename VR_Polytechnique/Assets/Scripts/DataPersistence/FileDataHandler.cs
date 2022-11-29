@@ -138,21 +138,28 @@ public class FileDataHandler
         string filepath = Path.Combine(dataDirPath, profileId, dataFilename + ".csv");
 
         StreamWriter tw = new StreamWriter(filepath, false);
-        tw.Write("Profile ID;Date of birth;Name;");
+        tw.Write("Profile ID;Date of birth;Name;Test;Date;Level;Time");
 
-        for (int i = 0; i < loadedData.evaluationData.Count; i++)
-        {
-            tw.Write("Test " + (i+1).ToString() + " : Date;");
-            tw.Write("Test " + (i+1).ToString() + " : Level;");
-            tw.Write("Test " + (i+1).ToString() + " : Time;");
-        }
+        //for (int i = 0; i < loadedData.evaluationData.Count; i++)
+        //{
+        //    tw.Write("Test " + (i+1).ToString() + " : Date;");
+        //    tw.Write("Test " + (i+1).ToString() + " : Level;");
+        //    tw.Write("Test " + (i+1).ToString() + " : Time;");
+        //}
+        
         tw.Write("\n");
 
         tw.Write(loadedData.profileId + ";" + loadedData.dateOfBirth + ";" + loadedData.profileName + ";");
 
-        for (int i = 0; i < loadedData.evaluationData.Count; i++)
+        if (loadedData.evaluationData.Count > 0)
         {
-            tw.Write(loadedData.evaluationData[i].date + ";" + loadedData.evaluationData[i].lvl + ";" + loadedData.evaluationData[i].time + ";");
+            tw.Write("1;" + loadedData.evaluationData[0].date + ";" + loadedData.evaluationData[0].lvl + ";" + loadedData.evaluationData[0].time + ";");
+            tw.Write("\n");
+            for (int i = 1; i < loadedData.evaluationData.Count; i++)
+            {
+                tw.Write(";;;" + (i+1).ToString() + ";" + loadedData.evaluationData[i].date + ";" + loadedData.evaluationData[i].lvl + ";" + loadedData.evaluationData[i].time + ";");
+                tw.Write("\n");
+            }
         }
 
         tw.Close();
