@@ -72,7 +72,6 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         {
             Debug.Log("Profile menu should not be active on launch");
         }
-
     }
 
     public void SetAllButtonsInteractable()
@@ -362,5 +361,20 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     public void ExitRemoveProfileWarning()
     {
         RemoveProfileMenuUI.SetActive(false);
+    }
+
+    public void HandleExcel()
+    {
+        FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        
+        if (profileId == DEFAULT)
+        {
+            Debug.Log("Please choose an ID.");
+        }
+        else
+        {
+            dataHandler.SaveCSV(profileId);
+        }
     }
 }
