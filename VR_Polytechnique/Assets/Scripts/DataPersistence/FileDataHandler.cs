@@ -132,9 +132,29 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void SaveExcel(string profileId)
+    public void SaveCSV(string profileId)
     {
         ProfileData loadedData = LoadProfile(profileId);
-        Debug.Log(loadedData.evaluationData[0].time);
+        string filepath = Path.Combine(dataDirPath, profileId, dataFilename + ".csv");
+
+        StreamWriter tw = new StreamWriter(filepath, false);
+        tw.Write("Profile ID;Date of birth;Name;");
+
+        for (int i = 0; i < loadedData.evaluationData.Count; i++)
+        {
+            tw.Write("Test " + (i+1).ToString() + " : Date;");
+            tw.Write("Test " + (i+1).ToString() + " : Level;");
+            tw.Write("Test " + (i+1).ToString() + " : Time;");
+        }
+        tw.Write("\n");
+
+        tw.Write(loadedData.profileId + ";" + loadedData.dateOfBirth + ";" + loadedData.profileName + ";");
+
+        for (int i = 0; i < loadedData.evaluationData.Count; i++)
+        {
+            tw.Write(loadedData.evaluationData[i].date + ";" + loadedData.evaluationData[i].lvl + ";" + loadedData.evaluationData[i].time + ";");
+        }
+
+        tw.Close();
     }
 }

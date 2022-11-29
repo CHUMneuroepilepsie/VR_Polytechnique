@@ -253,13 +253,14 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
     {
         FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        
         if (profileId == DEFAULT)
         {
             Debug.Log("Please choose an ID.");
         }
         else
         {
-            dataHandler.SaveExcel(profileId);
+            dataHandler.SaveCSV(profileId);
         }
     }
 }
