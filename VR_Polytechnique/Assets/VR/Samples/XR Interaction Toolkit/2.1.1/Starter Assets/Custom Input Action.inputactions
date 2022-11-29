@@ -26,6 +26,17 @@
                     "action": "MenuIsPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c0c8fdd-28c1-4b8b-8989-a7bed7b958fa",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuIsPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -26,14 +26,7 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
     {
         if (context.performed)
         {
-            if (GameIsPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            MenuPause();
         }
     }
     private void Start()
@@ -42,10 +35,8 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
         pauseMenuUI.SetActive(false);
     }
 
-    void Update()
+    void MenuPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             if (GameIsPaused)
             {
                 ResumeGame();
@@ -54,7 +45,6 @@ public class PauseMenu : MonoBehaviour, IDataPersistence
             {
                 PauseGame(); 
             }
-        }
     }
 
     public void ResumeGame()
