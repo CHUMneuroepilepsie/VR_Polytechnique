@@ -127,8 +127,14 @@ public class FileDataHandler
         }
         else
         {
-            loadedData = new ProfileData() { profileId = profileId};
+            loadedData = new ProfileData() {profileId = profileId};
         }
         return loadedData;
+    }
+
+    public void SaveExcel(string profileId)
+    {
+        ProfileData loadedData = LoadProfile(profileId);
+        Debug.Log(loadedData.evaluationData[0].time);
     }
 }
