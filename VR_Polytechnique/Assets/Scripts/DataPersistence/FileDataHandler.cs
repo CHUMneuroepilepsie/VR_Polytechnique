@@ -135,17 +135,43 @@ public class FileDataHandler
     public void SaveCSV(string profileId)
     {
         ProfileData loadedData = LoadProfile(profileId);
-        string filepath = Path.Combine(dataDirPath, profileId, dataFilename + ".csv");
+        string[] directories = dataDirPath.Split(Path.AltDirectorySeparatorChar);
+        int index = 0;
 
+        for (int i = 0; i < directories.Length; i++)
+        {
+            if (directories[i] == "AppData")
+            {
+                index = i;
+            }
+        }
+
+        List<string> list = new List<string>(directories);
+        list.RemoveRange(index, list.Count - index);
+        string temp = "";
+
+        for (int i = 1; i < list.Count; i++)
+        {
+            if (i == 1)
+            {
+                temp = list[0] + Path.DirectorySeparatorChar + list[1];
+            }
+            else
+            {
+                temp = Path.Combine(temp, list[i]);
+            }
+        }
+
+        string filepath = Path.Combine(temp, "Downloads", "Dossiers_patients", profileId);
+        
+        if (!Directory.Exists(filepath))
+        {
+            Directory.CreateDirectory(filepath);
+        }
+
+        filepath = Path.Combine(filepath, dataFilename + ".csv");
         StreamWriter tw = new StreamWriter(filepath, false);
         tw.Write("Profile ID;Date of birth;Name;Test;Date;Level;Time");
-
-        //for (int i = 0; i < loadedData.evaluationData.Count; i++)
-        //{
-        //    tw.Write("Test " + (i+1).ToString() + " : Date;");
-        //    tw.Write("Test " + (i+1).ToString() + " : Level;");
-        //    tw.Write("Test " + (i+1).ToString() + " : Time;");
-        //}
         
         tw.Write("\n");
 

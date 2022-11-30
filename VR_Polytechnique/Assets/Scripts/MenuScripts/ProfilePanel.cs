@@ -370,7 +370,6 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         
         if (profileId == DEFAULT)
         {
-            Debug.Log("Please choose an ID.");
         }
         else
         {
