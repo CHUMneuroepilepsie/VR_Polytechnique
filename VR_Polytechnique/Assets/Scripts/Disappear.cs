@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class Disappear : MonoBehaviour
 {
-    public GameObject Cube;
     public GameObject Player;
+    public Transform Transform => transform;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
         
-    }
-    public void OnMouseDown()
-    {
-        if (Vector3.Distance(Cube.tranform.position, Player.tranform.position) < 2)
+       if (Vector3.Distance(Player.transform.position, Transform.position) <= 2)
         {
-            gameObject.SetActive(false);
-        }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+                {
+                   this.gameObject.SetActive(false);
+                }
+            }
+           }
         
-    }
+    }      
 }
