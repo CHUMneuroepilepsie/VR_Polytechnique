@@ -312,7 +312,7 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         }
         else
         {
-            ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Anuler";
+            ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Annuler";
         }
 
         SaveButton.SetActive(true);
