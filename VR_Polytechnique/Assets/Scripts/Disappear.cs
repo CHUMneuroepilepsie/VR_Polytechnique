@@ -29,9 +29,17 @@ public class Disappear : MonoBehaviour
                 {
                     this.gameObject.SetActive(false);
                     text.SetActive(true);
+                  //StartCoroutine(Coroutine());
+                  //text.SetActive(false);
                 }
             }
            }
         
-    }      
-}
+    }
+    
+ //   IEnumerator Coroutine()
+   // {
+     //   yield return new WaitForSeconds(3);
+       // Destroy(text);
+   // }
+//}
