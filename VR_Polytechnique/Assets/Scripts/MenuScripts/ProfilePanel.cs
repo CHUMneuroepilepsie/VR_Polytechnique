@@ -309,10 +309,12 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         if(Language == "Anglais")
         {
             ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Cancel";
+            SaveButton.GetComponentInChildren<TextMeshProUGUI>().text = "Save";
         }
         else
         {
             ModifyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Annuler";
+            SaveButton.GetComponentInChildren<TextMeshProUGUI>().text = "Sauvegarder";
         }
 
         SaveButton.SetActive(true);
