@@ -7424,8 +7424,6 @@ MonoBehaviour:
   IdText: {fileID: 0}
   DateOfBirthText: {fileID: 0}
   NameText: {fileID: 0}
-  IdInputText: {fileID: 0}
-  dateInputText: {fileID: 0}
   EvalText1: {fileID: 0}
   EvalText2: {fileID: 0}
   EvalText3: {fileID: 0}
@@ -8010,10 +8008,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pPanel: {fileID: 0}
-  new_id: {fileID: 1789323123234103311}
-  dateOfBirth: {fileID: 1789323122387898037}
-  fullName: {fileID: 1789323123001854543}
   warningText: {fileID: 1789323122463498831}
+  IdInput: {fileID: 0}
+  dateOfBirthInput: {fileID: 0}
+  nameInput: {fileID: 0}
 --- !u!1 &1789323123238037972
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,8 +8551,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8727,8 +8725,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10111,7 +10109,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 111.9, y: 124.99999}
-  m_SizeDelta: {x: 72.7562, y: 22.8489}
+  m_SizeDelta: {x: 90, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8942765100598955312
 CanvasRenderer:
@@ -10794,7 +10792,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 18.228985, y: 124.99999}
-  m_SizeDelta: {x: 72.7562, y: 22.8489}
+  m_SizeDelta: {x: 90, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2878511217493554965
 CanvasRenderer:

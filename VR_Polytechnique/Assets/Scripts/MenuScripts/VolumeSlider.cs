@@ -25,6 +25,7 @@ public class VolumeSlider : MonoBehaviour, IDataPersistence
     {
         slider = GameObject.Find("VolumeSlider").GetComponent<Slider>();
         slider.value = volume;
+        SetNumberText(volume);
     }
     public void SetNumberText(float v)
     {
