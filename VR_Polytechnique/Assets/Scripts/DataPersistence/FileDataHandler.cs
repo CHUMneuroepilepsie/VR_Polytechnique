@@ -132,37 +132,11 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void SaveCSV(string profileId)
+    public void SaveCSV(string profileId, string path)
     {
         ProfileData loadedData = LoadProfile(profileId);
-        string[] directories = dataDirPath.Split(Path.AltDirectorySeparatorChar);
-        int index = 0;
 
-        for (int i = 0; i < directories.Length; i++)
-        {
-            if (directories[i] == "AppData")
-            {
-                index = i;
-            }
-        }
-
-        List<string> list = new List<string>(directories);
-        list.RemoveRange(index, list.Count - index);
-        string temp = "";
-
-        for (int i = 1; i < list.Count; i++)
-        {
-            if (i == 1)
-            {
-                temp = list[0] + Path.DirectorySeparatorChar + list[1];
-            }
-            else
-            {
-                temp = Path.Combine(temp, list[i]);
-            }
-        }
-
-        string filepath = Path.Combine(temp, "Downloads", "Dossiers_patients", profileId);
+        string filepath = Path.Combine(path, "Dossiers_patients", profileId);
         
         if (!Directory.Exists(filepath))
         {
@@ -171,7 +145,7 @@ public class FileDataHandler
 
         filepath = Path.Combine(filepath, dataFilename + ".csv");
         StreamWriter tw = new StreamWriter(filepath, false);
-        tw.Write("Profile ID;Date of birth;Name;Test;Date;Level;Time");
+        tw.Write("Profile ID;Date of birth;Name;Test;Date;Time;Level;Duration");
         
         tw.Write("\n");
 
@@ -179,11 +153,13 @@ public class FileDataHandler
 
         if (loadedData.evaluationData.Count > 0)
         {
-            tw.Write("1;" + loadedData.evaluationData[0].date + ";" + loadedData.evaluationData[0].lvl + ";" + loadedData.evaluationData[0].time + ";");
+            string[] time = (loadedData.evaluationData[0].date).Split(" ");
+            tw.Write("1;" + time[0] + ";" + time[1] + ";" + loadedData.evaluationData[0].lvl + ";" + loadedData.evaluationData[0].time + ";");
             tw.Write("\n");
             for (int i = 1; i < loadedData.evaluationData.Count; i++)
             {
-                tw.Write(";;;" + (i+1).ToString() + ";" + loadedData.evaluationData[i].date + ";" + loadedData.evaluationData[i].lvl + ";" + loadedData.evaluationData[i].time + ";");
+                time = (loadedData.evaluationData[i].date).Split(" ");
+                tw.Write(";;;" + (i+1).ToString() + ";" + time[0] + ";" + time[1] + ";" + loadedData.evaluationData[i].lvl + ";" + loadedData.evaluationData[i].time + ";");
                 tw.Write("\n");
             }
         }

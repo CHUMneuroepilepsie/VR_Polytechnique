@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     private string Language;
     public GameObject SettingsMenuUI;
     public GameObject ProfileMenuUI;
+    public GameObject FolderMenuUI;
+    public GameObject FolderpathMenuUI;
     public GameObject AddProfileMenuUI;
     public GameObject RemoveProfileMenuUI;
     public IDataPersistence MENU;
@@ -105,5 +107,25 @@ public class MenuManager : MonoBehaviour, IDataPersistence
     public void ExitProfileMenu()
     {
         ProfileMenuUI.SetActive(false);
+    }
+
+    public void OpenFolderMenu()
+    {
+        FolderMenuUI.SetActive(true);
+    }
+
+    public void ExitFolderMenu()
+    {
+        FolderMenuUI.SetActive(false);
+    }
+
+    public void OpenFolderpathMenu()
+    {
+        FolderpathMenuUI.SetActive(true);
+    }
+
+    public void ExitFolderpathMenu()
+    {
+        FolderpathMenuUI.SetActive(false);
     }
 }

@@ -363,17 +363,22 @@ public class ProfilePanel : MonoBehaviour, IDataPersistence
         RemoveProfileMenuUI.SetActive(false);
     }
 
+    public void GetIDNumber()
+    {
+        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        PlayerPrefs.SetString("CurrentID", profileId);
+    }
+
     public void HandleExcel()
     {
         FileDataHandler dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-        string profileId = currentClickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
-        
-        if (profileId == DEFAULT)
-        {
-        }
+        string profileId = PlayerPrefs.GetString("CurrentID");
+        string path = PlayerPrefs.GetString("CSV_path");
+
+        if (profileId == DEFAULT) { }
         else
         {
-            dataHandler.SaveCSV(profileId);
+            dataHandler.SaveCSV(profileId, path);
         }
     }
 }
